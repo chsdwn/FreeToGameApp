@@ -1,0 +1,1 @@
+export { useGames } from './getGames';
