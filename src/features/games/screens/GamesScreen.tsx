@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import ErrorBoundary from 'react-native-error-boundary';
 
 import {
-  GamesError,
+  GamesErrorFallback,
   GamesFilterModal,
   GamesList,
   GamesListHeader,
@@ -12,7 +12,7 @@ import {
 export const GamesScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ErrorBoundary FallbackComponent={GamesError}>
+      <ErrorBoundary FallbackComponent={GamesErrorFallback}>
         <GamesListHeader />
         <GamesList />
         <GamesFilterModal />

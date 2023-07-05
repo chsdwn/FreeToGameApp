@@ -8,7 +8,10 @@ import { Icon } from '@/components';
 
 import type { FallbackComponentProps } from 'react-native-error-boundary';
 
-export const GamesError = ({ error, resetError }: FallbackComponentProps) => {
+export const GamesErrorFallback = ({
+  error,
+  resetError,
+}: FallbackComponentProps) => {
   const theme = useTheme();
 
   let errorMessage = 'An error occured.';
