@@ -4,11 +4,17 @@ import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 import { GameCard } from '.';
 import { useGames } from '../api';
+import { useGamesFilterStore } from '../store';
 
 const Seperator = () => <View style={styles.seperator} />;
 
 export const GamesList = () => {
-  const gamesQuery = useGames();
+  const { platform, category, sortBy } = useGamesFilterStore();
+  const gamesQuery = useGames({ platform, category, sortBy });
+
+  const handleRefresh = () => {
+    gamesQuery.refetch();
+  };
 
   return (
     <FlatList
@@ -18,7 +24,8 @@ export const GamesList = () => {
       contentContainerStyle={styles.content}
       ItemSeparatorComponent={Seperator}
       refreshing={gamesQuery.isFetching || gamesQuery.isLoading}
-      onRefresh={() => gamesQuery.refetch()}
+      onRefresh={handleRefresh}
+      initialNumToRender={5}
     />
   );
 };
