@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import DropDownPicker from 'react-native-dropdown-picker';
 import {
   Button,
   Divider,
@@ -12,6 +11,7 @@ import {
 } from 'react-native-paper';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
+import { DropDown } from '.';
 import {
   defaultCategoryItems,
   defaultPlatformItems,
@@ -21,30 +21,21 @@ import { useGamesFilterModalStore, useGamesFilterStore } from '../store';
 
 import type { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
 
-type IPlatformItems = { label: string; value: IGamePlatform }[];
-type ICategoryItems = { label: string; value: IGameCategory }[];
-type ISortByItems = { label: string; value: IGameSortBy }[];
-
 export const GamesFilterModal = () => {
   const theme = useTheme();
 
-  const { setPlatform, setCategory, setSortBy } = useGamesFilterStore();
+  const { setPlatform, setCategory, setSortBy, resetGamesFilter } =
+    useGamesFilterStore();
   const { visible, hide } = useGamesFilterModalStore();
 
   const [platformOpen, setPlatformOpen] = useState(false);
   const [platformValue, setPlatformValue] = useState<IGamePlatform>('all');
-  const [platformItems, setPlatformItems] =
-    useState<IPlatformItems>(defaultPlatformItems);
   const [categoryOpen, setCategoryOpen] = useState(false);
   const [categoryValue, setCategoryValue] = useState<IGameCategory | null>(
     null,
   );
-  const [categoryItems, setCategoryItems] =
-    useState<ICategoryItems>(defaultCategoryItems);
   const [sortByOpen, setSortByOpen] = useState(false);
   const [sortByValue, setSortByValue] = useState<IGameSortBy | null>(null);
-  const [sortByItems, setSortByItems] =
-    useState<ISortByItems>(defaultSortByItems);
 
   const handlePlatformOpen = () => {
     setCategoryOpen(false);
@@ -65,9 +56,8 @@ export const GamesFilterModal = () => {
     setPlatformValue('all');
     setCategoryValue(null);
     setSortByValue(null);
-    setPlatform('all');
-    setCategory(null);
-    setSortBy(null);
+
+    resetGamesFilter();
     hide();
   };
 
@@ -91,55 +81,41 @@ export const GamesFilterModal = () => {
             <Divider style={styles.divider} />
 
             <Text variant="bodyMedium">Platform:</Text>
-            <DropDownPicker
+            <DropDown
+              defaultItems={defaultPlatformItems}
               open={platformOpen}
-              onOpen={handlePlatformOpen}
               value={platformValue}
-              items={platformItems}
-              setOpen={setPlatformOpen}
-              setValue={setPlatformValue}
-              setItems={setPlatformItems}
-              disableBorderRadius
-              style={styles.dropdown}
-              dropDownContainerStyle={styles.dropdownContainer}
               zIndex={3000}
               zIndexInverse={1000}
+              onOpen={handlePlatformOpen}
+              setOpen={setPlatformOpen}
+              setValue={setPlatformValue}
             />
 
             <Text variant="bodyMedium">Category:</Text>
-            <DropDownPicker
-              placeholder="Select category..."
+            <DropDown
+              defaultItems={defaultCategoryItems}
               open={categoryOpen}
-              onOpen={handleCategoryOpen}
               value={categoryValue}
-              items={categoryItems}
-              setOpen={setCategoryOpen}
-              setValue={setCategoryValue}
-              setItems={setCategoryItems}
-              disableBorderRadius
-              style={styles.dropdown}
-              dropDownContainerStyle={styles.dropdownContainer}
-              placeholderStyle={{ color: theme.colors.backdrop }}
               zIndex={2000}
               zIndexInverse={2000}
+              placeholder="Select category..."
+              onOpen={handleCategoryOpen}
+              setOpen={setCategoryOpen}
+              setValue={setCategoryValue}
             />
 
             <Text variant="bodyMedium">Sort by:</Text>
-            <DropDownPicker
-              placeholder="Select sort by..."
+            <DropDown
+              defaultItems={defaultSortByItems}
               open={sortByOpen}
-              onOpen={handleSortByOpen}
               value={sortByValue}
-              items={sortByItems}
-              setOpen={setSortByOpen}
-              setValue={setSortByValue}
-              setItems={setSortByItems}
-              disableBorderRadius
-              style={styles.dropdown}
-              dropDownContainerStyle={styles.dropdownContainer}
-              placeholderStyle={{ color: theme.colors.backdrop }}
               zIndex={1000}
               zIndexInverse={3000}
+              placeholder="Select sort by..."
+              onOpen={handleSortByOpen}
+              setOpen={setSortByOpen}
+              setValue={setSortByValue}
             />
           </View>
 
@@ -173,15 +149,6 @@ const styles = StyleSheet.create({
   },
   divider: {
     marginBottom: wp(2),
-  },
-  dropdown: {
-    borderRadius: 0,
-    borderWidth: StyleSheet.hairlineWidth,
-    marginBottom: wp(2),
-  },
-  dropdownContainer: {
-    borderRadius: 0,
-    borderWidth: StyleSheet.hairlineWidth,
   },
   actionsContainer: {
     flexDirection: 'row',
