@@ -3,8 +3,19 @@ import { useQuery } from '@tanstack/react-query';
 import { axios } from '@/lib';
 import type { IGame } from '../types';
 
-const getGames = () => {
-  return axios.get<IGame[]>('/games').then((res) => res.data);
+type IFilter = {
+  platform: string;
+  category: string | null;
+  sortBy: string | null;
 };
 
-export const useGames = () => useQuery(['game'], () => getGames());
+const getGames = ({ platform, category, sortBy }: IFilter) => {
+  let url = `/games?platform=${platform}`;
+  if (category) url += `&category=${category}`;
+  if (sortBy) url += `&sort-by=${sortBy}`;
+
+  return axios.get<IGame[]>(url).then((res) => res.data);
+};
+
+export const useGames = (filter: IFilter) =>
+  useQuery(['game', filter], () => getGames(filter));
