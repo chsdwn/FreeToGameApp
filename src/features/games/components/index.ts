@@ -1,3 +1,4 @@
+export { DropDown } from './DropDown';
 export { GameCard } from './GameCard';
 export { GamesErrorFallback } from './GamesErrorFallback';
 export { GamesFilterModal } from './GamesFilterModal';
