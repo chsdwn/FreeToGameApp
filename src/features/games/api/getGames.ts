@@ -17,7 +17,7 @@ const getGames = ({ platform, category, sortBy }: IFilter) => {
   if (sortBy) url += `&sort-by=${sortBy}`;
 
   return axios.get<IGame[]>(url).then((res) => {
-    // Returns index.html as string on android if given game or url not found.
+    // Returns index.html as string on android if given game id or url not found.
     if (typeof res.data === 'string') throwAxiosServerError();
     return res.data;
   });

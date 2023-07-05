@@ -7,7 +7,7 @@ import type { IGame } from '../types';
 type IProps = {
   game: IGame;
 };
-export const GameCard = ({ game }: IProps) => {
+export const GameCard = React.memo(({ game }: IProps) => {
   return (
     <Card>
       <Image
@@ -25,11 +25,11 @@ export const GameCard = ({ game }: IProps) => {
       />
     </Card>
   );
-};
+});
 
 const styles = StyleSheet.create({
   img: {
-    aspectRatio: 365 / 205,
+    aspectRatio: 365 / 206,
     borderRadius: DefaultTheme.roundness * 3,
   },
   title: {
