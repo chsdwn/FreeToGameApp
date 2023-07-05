@@ -87,7 +87,7 @@ export const GamesFilterModal = () => {
       >
         <Surface mode="flat" style={styles.surface}>
           <View>
-            <Text variant="headlineMedium">Filter</Text>
+            <Text variant="headlineMedium">Filter Games</Text>
             <Divider style={styles.divider} />
 
             <Text variant="bodyMedium">Platform:</Text>
