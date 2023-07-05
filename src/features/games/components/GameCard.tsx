@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
-import { Card } from 'react-native-paper';
+import { Card, DefaultTheme } from 'react-native-paper';
 
 import type { IGame } from '../types';
 
@@ -9,7 +9,7 @@ type IProps = {
 };
 export const GameCard = ({ game }: IProps) => {
   return (
-    <Card style={styles.card}>
+    <Card>
       <Image
         source={{ uri: game.thumbnail }}
         style={styles.img}
@@ -28,11 +28,9 @@ export const GameCard = ({ game }: IProps) => {
 };
 
 const styles = StyleSheet.create({
-  card: {
-    overflow: 'hidden',
-  },
   img: {
-    aspectRatio: 1.77,
+    aspectRatio: 365 / 205,
+    borderRadius: DefaultTheme.roundness * 3,
   },
   title: {
     textAlign: 'center',
