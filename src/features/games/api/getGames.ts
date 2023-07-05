@@ -1,6 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 
+import { throwAxiosServerError } from '../utils';
 import { axios } from '@/lib';
+
 import type { IGame } from '../types';
 
 type IFilter = {
@@ -14,7 +16,11 @@ const getGames = ({ platform, category, sortBy }: IFilter) => {
   if (category) url += `&category=${category}`;
   if (sortBy) url += `&sort-by=${sortBy}`;
 
-  return axios.get<IGame[]>(url).then((res) => res.data);
+  return axios.get<IGame[]>(url).then((res) => {
+    // Returns index.html as string on android if given game or url not found.
+    if (typeof res.data === 'string') throwAxiosServerError();
+    return res.data;
+  });
 };
 
 export const useGames = (filter: IFilter) =>
