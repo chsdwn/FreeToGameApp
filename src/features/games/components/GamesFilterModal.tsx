@@ -119,6 +119,7 @@ export const GamesFilterModal = () => {
               disableBorderRadius
               style={styles.dropdown}
               dropDownContainerStyle={styles.dropdownContainer}
+              placeholderStyle={{ color: theme.colors.backdrop }}
               zIndex={2000}
               zIndexInverse={2000}
             />
@@ -136,10 +137,12 @@ export const GamesFilterModal = () => {
               disableBorderRadius
               style={styles.dropdown}
               dropDownContainerStyle={styles.dropdownContainer}
+              placeholderStyle={{ color: theme.colors.backdrop }}
               zIndex={1000}
               zIndexInverse={3000}
             />
           </View>
+
           <View style={styles.actionsContainer}>
             <Button
               icon="delete-outline"
@@ -149,7 +152,7 @@ export const GamesFilterModal = () => {
               Clear
             </Button>
             <Button icon="magnify" onPress={handleSearch}>
-              Search
+              Filter
             </Button>
           </View>
         </Surface>
