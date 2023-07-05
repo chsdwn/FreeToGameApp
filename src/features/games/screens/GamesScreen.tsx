@@ -1,13 +1,20 @@
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 
-import { GamesList, GamesListHeader } from '../components';
+import { GamesFilterModal, GamesList, GamesListHeader } from '../components';
 
 export const GamesScreen = () => {
   return (
-    <View>
+    <SafeAreaView style={styles.container}>
       <GamesListHeader />
       <GamesList />
-    </View>
+      <GamesFilterModal />
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
