@@ -2,10 +2,12 @@ import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { isAxiosError } from 'axios';
 import { Button, Surface, Text, useTheme } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
+import { Icon } from '@/components';
+
 import type { FallbackComponentProps } from 'react-native-error-boundary';
+
 export const GamesError = ({ error, resetError }: FallbackComponentProps) => {
   const theme = useTheme();
 

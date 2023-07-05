@@ -5,6 +5,12 @@ module.exports = {
     'no-restricted-imports': [
       'error',
       {
+        patterns: [
+          {
+            group: ['react-native-vector-icons'],
+            message: 'Import Icon from @/components',
+          },
+        ],
         paths: [
           {
             name: 'react-native',
