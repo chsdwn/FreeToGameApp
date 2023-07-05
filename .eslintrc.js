@@ -5,17 +5,16 @@ module.exports = {
     'no-restricted-imports': [
       'error',
       {
-        patterns: [
-          {
-            group: ['axios'],
-            message: 'Import pre-configured axios from @/lib',
-          },
-        ],
         paths: [
           {
             name: 'react-native',
             importNames: ['Text'],
             message: 'Import Text from react-native-paper',
+          },
+          {
+            name: 'axios',
+            importNames: ['default'],
+            message: 'Import pre-configured axios from @/lib',
           },
         ],
       },
