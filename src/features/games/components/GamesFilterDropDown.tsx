@@ -18,7 +18,7 @@ type IProps<T extends ValueType | null> = {
   setOpen: Dispatch<SetStateAction<boolean>>;
   setValue: Dispatch<SetStateAction<T>> | Dispatch<SetStateAction<T | null>>;
 };
-export const DropDown = <T extends ValueType>({
+export const GamesFilterDropDown = <T extends ValueType>({
   defaultItems,
   open,
   value,

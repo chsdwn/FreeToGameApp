@@ -11,7 +11,7 @@ import {
 } from 'react-native-paper';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
-import { DropDown } from '.';
+import { GamesFilterDropDown } from '.';
 import {
   defaultCategoryItems,
   defaultPlatformItems,
@@ -81,7 +81,7 @@ export const GamesFilterModal = () => {
             <Divider style={styles.divider} />
 
             <Text variant="bodyMedium">Platform:</Text>
-            <DropDown
+            <GamesFilterDropDown
               defaultItems={defaultPlatformItems}
               open={platformOpen}
               value={platformValue}
@@ -93,7 +93,7 @@ export const GamesFilterModal = () => {
             />
 
             <Text variant="bodyMedium">Category:</Text>
-            <DropDown
+            <GamesFilterDropDown
               defaultItems={defaultCategoryItems}
               open={categoryOpen}
               value={categoryValue}
@@ -106,7 +106,7 @@ export const GamesFilterModal = () => {
             />
 
             <Text variant="bodyMedium">Sort by:</Text>
-            <DropDown
+            <GamesFilterDropDown
               defaultItems={defaultSortByItems}
               open={sortByOpen}
               value={sortByValue}
