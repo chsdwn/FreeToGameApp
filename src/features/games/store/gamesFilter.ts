@@ -6,20 +6,29 @@ type Platform = IGamePlatform;
 type Category = IGameCategory | null;
 type SortBy = IGameSortBy | null;
 
-type GamesFilterStore = {
+type InitialValues = {
   platform: Platform;
   category: Category;
   sortBy: SortBy;
+};
+
+type GamesFilterStore = {
   setPlatform: (platform: Platform) => void;
   setCategory: (category: Category) => void;
   setSortBy: (sortBy: SortBy) => void;
-};
+  resetGamesFilter: () => void;
+} & InitialValues;
 
-export const useGamesFilterStore = create<GamesFilterStore>((set) => ({
+const initialValues: InitialValues = {
   platform: 'all',
   category: null,
   sortBy: null,
+};
+
+export const useGamesFilterStore = create<GamesFilterStore>((set) => ({
+  ...initialValues,
   setPlatform: (platform) => set({ platform }),
   setCategory: (category) => set({ category }),
   setSortBy: (sortBy) => set({ sortBy }),
+  resetGamesFilter: () => set({ ...initialValues }),
 }));
