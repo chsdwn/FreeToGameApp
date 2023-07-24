@@ -1,3 +1,5 @@
+process.env.TAMAGUI_TARGET = 'native';
+
 module.exports = (api) => {
   const plugins = [
     [
@@ -10,6 +12,7 @@ module.exports = (api) => {
         },
       },
     ],
+    'transform-inline-environment-variables',
   ];
 
   if (api.env() !== 'development') plugins.push('transform-remove-console');

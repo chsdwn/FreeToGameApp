@@ -2,8 +2,9 @@ import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { PaperProvider } from 'react-native-paper';
+import { Button, TamaguiProvider, Text, YStack } from 'tamagui';
 
+import config from '../tamagui.config';
 import { queryClient } from './lib';
 import { HomeRoute } from './routes';
 
@@ -11,12 +12,62 @@ export const App = () => {
   return (
     <NavigationContainer>
       <QueryClientProvider client={queryClient}>
-        <PaperProvider>
+        <TamaguiProvider config={config}>
           <StatusBar />
           <SafeAreaView style={styles.container}>
-            <HomeRoute />
+            <YStack flex={1} alignItems="center" justifyContent="center">
+              <Text
+                color="black"
+                fontSize={48}
+                fontWeight="300"
+                fontFamily="$body"
+              >
+                Tamagui
+              </Text>
+              <Text
+                color="black"
+                fontSize={48}
+                fontWeight="300"
+                fontFamily="$body"
+              >
+                Tamagui
+              </Text>
+              <Text
+                color="black"
+                fontSize={48}
+                fontWeight="400"
+                fontFamily="$body"
+              >
+                Tamagui
+              </Text>
+              <Text
+                color="black"
+                fontSize={48}
+                fontWeight="500"
+                fontFamily="$body"
+              >
+                Tamagui
+              </Text>
+              <Text
+                color="black"
+                fontSize={48}
+                fontWeight="600"
+                fontFamily="$body"
+              >
+                Tamagui
+              </Text>
+              <Text
+                color="black"
+                fontSize={48}
+                fontWeight="700"
+                fontFamily="$body"
+              >
+                Tamagui
+              </Text>
+              <Button>Press ME</Button>
+            </YStack>
           </SafeAreaView>
-        </PaperProvider>
+        </TamaguiProvider>
       </QueryClientProvider>
     </NavigationContainer>
   );
