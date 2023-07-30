@@ -1,24 +1,32 @@
 import { shorthands } from '@tamagui/shorthands';
 import { themes, tokens } from '@tamagui/themes';
-import { createFont, createTamagui } from 'tamagui';
+import { createFont, createTamagui, createTokens } from 'tamagui';
 
-export default createTamagui({
+const size = {
+  1: 12,
+  2: 14,
+  3: 16,
+  4: 18,
+  5: 20,
+  6: 24,
+  7: 30,
+  8: 36,
+  9: 48,
+  10: 60,
+};
+
+const lineHeight = Object.entries(size).reduce((acc, [key, value]) => {
+  acc[+key as keyof typeof size] = value * 1.5;
+  return acc;
+}, {} as typeof size);
+
+const appConfig = createTamagui({
   themes,
-  tokens,
   shorthands,
   fonts: {
     body: createFont({
-      size: {
-        // You'll want to fill these values in so you can use them
-        // for now, fontSize="$4" will be 14px.
-        // You can define different keys, but `tamagui`
-        // standardizes on 1-15.
-        4: 14,
-      },
-
-      lineHeight: {
-        4: 16,
-      },
+      size,
+      lineHeight,
       face: {
         300: { normal: 'RobotoMono-Light' },
         400: { normal: 'RobotoMono-Regular' },
@@ -28,4 +36,28 @@ export default createTamagui({
       },
     }),
   },
+  tokens: createTokens({
+    ...tokens,
+    spacing: {
+      0: 0,
+      1: 4,
+      2: 8,
+      3: 12,
+      4: 16,
+      5: 24,
+      6: 32,
+      7: 48,
+      8: 64,
+      9: 96,
+      10: 128,
+    },
+  }),
 });
+
+export type AppConfig = typeof appConfig;
+
+declare module 'tamagui' {
+  interface TamaguiCustomConfig extends AppConfig {}
+}
+
+export default appConfig;
