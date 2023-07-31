@@ -72,6 +72,10 @@
    ```sh
    git clone https://github.com/chsdwn/FreeToGameApp
    ```
+1. Navigate to the FreeToGameApp directory
+   ```sh
+   cd FreeToGameApp
+   ```
 1. Install NPM packages
    ```sh
    yarn
@@ -98,7 +102,7 @@
 
 ## License
 
-Distributed under the MIT License. See [`LICENSE.txt`](https://github.com/chsdwn/FreeToGameApp/blob/main/LICENSE) for more information.
+Distributed under the MIT License. See [`LICENSE`](https://github.com/chsdwn/FreeToGameApp/blob/main/LICENSE) for more information.
 <p align="right">(<a href="#title">back to top</a>)</p>
 
 ## Contact
