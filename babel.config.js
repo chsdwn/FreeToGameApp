@@ -1,7 +1,6 @@
-process.env.TAMAGUI_TARGET = 'native';
-
-module.exports = (api) => {
-  const plugins = [
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
     [
       'module-resolver',
       {
@@ -12,13 +11,10 @@ module.exports = (api) => {
         },
       },
     ],
-    'transform-inline-environment-variables',
-  ];
-
-  if (api.env() !== 'development') plugins.push('transform-remove-console');
-
-  return {
-    presets: ['module:metro-react-native-babel-preset'],
-    plugins,
-  };
+  ],
+  env: {
+    production: {
+      plugins: ['react-native-paper/babel', 'transform-remove-console'],
+    },
+  },
 };
