@@ -1,17 +1,23 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Appbar, Badge } from 'react-native-paper';
 
-import { useGamesFilterModalStore, useGamesFilterStore } from '../store';
+import { HomeStackNavigationProp } from '@/types';
+import { useGamesFilterStore } from '../store';
 
 export const GamesListHeader = () => {
+  const navigation = useNavigation<HomeStackNavigationProp>();
   const { platform, category, sortBy } = useGamesFilterStore();
-  const { show } = useGamesFilterModalStore();
 
   let badgeCount = 0;
-  if (platform !== 'all') badgeCount++;
+  if (platform) badgeCount++;
   if (category) badgeCount++;
   if (sortBy) badgeCount++;
+
+  const handleFilterPress = () => {
+    navigation.navigate('GamesFilter');
+  };
 
   return (
     <Appbar.Header statusBarHeight={0}>
@@ -20,7 +26,7 @@ export const GamesListHeader = () => {
         <Badge visible={!!badgeCount} size={16} style={styles.badge}>
           {badgeCount}
         </Badge>
-        <Appbar.Action icon="filter-variant" onPress={show} />
+        <Appbar.Action icon="filter-variant" onPress={handleFilterPress} />
       </View>
     </Appbar.Header>
   );

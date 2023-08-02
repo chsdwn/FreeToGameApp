@@ -1,14 +1,14 @@
 import type { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
 
 type IPlatformItems = { label: string; value: IGamePlatform }[];
-export const defaultPlatformItems: IPlatformItems = [
+export const platformItems: IPlatformItems = [
   { label: 'All', value: 'all' },
   { label: 'Browser', value: 'browser' },
   { label: 'PC', value: 'pc' },
 ];
 
 type ICategoryItems = { label: string; value: IGameCategory }[];
-export const defaultCategoryItems: ICategoryItems = [
+export const categoryItems: ICategoryItems = [
   { label: 'Action', value: 'action' },
   { label: 'MMO', value: 'mmo' },
   { label: 'MMORPG', value: 'mmorpg' },
@@ -21,7 +21,7 @@ export const defaultCategoryItems: ICategoryItems = [
 ];
 
 type ISortByItems = { label: string; value: IGameSortBy }[];
-export const defaultSortByItems: ISortByItems = [
+export const sortByItems: ISortByItems = [
   { label: 'Alphabetical', value: 'alphabetical' },
   { label: 'Popularity', value: 'popularity' },
   { label: 'Release Date', value: 'release-date' },

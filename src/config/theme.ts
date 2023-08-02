@@ -83,7 +83,7 @@ const fonts = configureFonts({
 });
 
 export const defaultTheme = {
-  roundness: 1,
+  roundness: 3,
   spacing: {
     0: 0,
     1: 4,

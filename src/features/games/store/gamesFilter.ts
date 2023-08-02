@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 import type { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
 
-type Platform = IGamePlatform;
+type Platform = IGamePlatform | null;
 type Category = IGameCategory | null;
 type SortBy = IGameSortBy | null;
 
@@ -20,7 +20,7 @@ type GamesFilterStore = {
 } & InitialValues;
 
 const initialValues: InitialValues = {
-  platform: 'all',
+  platform: null,
   category: null,
   sortBy: null,
 };

@@ -1,22 +1,19 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import ErrorBoundary from 'react-native-error-boundary';
+import { Surface } from 'react-native-paper';
 
-import {
-  GamesErrorFallback,
-  GamesFilterModal,
-  GamesList,
-  GamesListHeader,
-} from '../components';
+import { GamesErrorFallback, GamesList, GamesListHeader } from '../components';
 
 export const GamesScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ErrorBoundary FallbackComponent={GamesErrorFallback}>
+      <Surface style={styles.container}>
         <GamesListHeader />
-        <GamesList />
-        <GamesFilterModal />
-      </ErrorBoundary>
+        <ErrorBoundary FallbackComponent={GamesErrorFallback}>
+          <GamesList />
+        </ErrorBoundary>
+      </Surface>
     </SafeAreaView>
   );
 };

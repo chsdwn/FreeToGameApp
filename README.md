@@ -43,7 +43,7 @@
 | React                     | UI Framework     | v18     | The most popular UI framework in the world                                       |
 | TypeScript                | Language         | v4      | Static typechecking                                                              |
 | React Navigation          | Navigation       | v6      | Performant and consistent navigation framework                                   |
-| Tamagui                   | UI               | v1      | A better universal ui system                                                     |
+| React Native Paper        | UI               | v5      | Material Design for React Native                                                 |
 | React Native Vector Icons | UI               | v9      | Customizable icons                                                               |
 | Zustand                   | State Management | v4      | A small, fast and scalable bearbones state-management solution                   |
 | TanStack Query            | State Management | v4      | Powerful asynchronous state management, server-state utilities and data fetching |
@@ -51,6 +51,7 @@
 | Flipper                   | Debugger         |         | Native debugging                                                                 |
 | Hermes                    | JS engine        |         | Fine-tuned JS engine for RN                                                      |
 | Jest                      | Test Runner      | v29     | Standard test runner for JS apps                                                 |
+
 
 <p align="right">(<a href="#title">back to top</a>)</p>
 
