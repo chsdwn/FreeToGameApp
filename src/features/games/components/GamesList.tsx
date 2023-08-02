@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
-import { GameCard } from '.';
+import { GameCard } from './GameCard';
 import { useGames } from '../api';
 import { useGamesFilterStore } from '../store';
 
