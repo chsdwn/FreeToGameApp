@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { Button, Surface, Text, useTheme } from 'react-native-paper';
 
 import { Icon } from '@/components';
 import { defaultTheme, Theme } from '@/config/theme';
+import { GamesFilterChip } from '../components';
 import { categoryItems, platformItems, sortByItems } from '../config';
 import { useGamesFilterStore } from '../store';
 import { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
@@ -49,94 +50,100 @@ export const GamesFilterScreen = () => {
   };
 
   return (
-    <Surface style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.titleContainer}>
-          <Icon
-            name="layers-triple"
-            size={32}
-            color={theme.colors.tertiary}
-            style={styles.titleIcon}
-          />
-          <Text variant="bodySmall">Platform:</Text>
-        </View>
-        <View style={styles.filterBtnContainer}>
-          {platformItems.map(({ label, value }) => (
-            <Button
-              key={`platformItem-${value}`}
-              mode={platform === value ? 'contained' : 'outlined'}
-              onPress={() => handlePlatformChange(value)}
-              style={styles.filterBtn}
-            >
-              {label}
-            </Button>
-          ))}
-        </View>
-        <View style={styles.titleContainer}>
-          <Icon
-            name="shape"
-            size={32}
-            color={theme.colors.tertiary}
-            style={styles.titleIcon}
-          />
-          <Text variant="bodySmall">Category:</Text>
-        </View>
-        <View style={styles.filterBtnContainer}>
-          {categoryItems.map(({ label, value }) => (
-            <Button
-              key={`categoryItem-${value}`}
-              mode={category === value ? 'contained' : 'outlined'}
-              onPress={() => handleCategoryChange(value)}
-              style={styles.filterBtn}
-            >
-              {label}
-            </Button>
-          ))}
-        </View>
-        <View style={styles.titleContainer}>
-          <Icon
-            name="sort"
-            size={32}
-            color={theme.colors.tertiary}
-            style={styles.titleIcon}
-          />
-          <Text variant="bodySmall">Sort by:</Text>
-        </View>
-        <View style={styles.filterBtnContainer}>
-          {sortByItems.map(({ label, value }) => (
-            <Button
-              key={`sortByItem-${value}`}
-              mode={sortBy === value ? 'contained' : 'outlined'}
-              onPress={() => handleSortByChange(value)}
-              style={styles.filterBtn}
-            >
-              {label}
-            </Button>
-          ))}
-        </View>
+    <Surface style={styles.root}>
+      <SafeAreaView style={styles.container}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.titleContainer}>
+            <Icon
+              name="layers-triple"
+              size={26}
+              color={theme.colors.tertiary}
+              style={[styles.titleIcon]}
+            />
+            <Text variant="labelLarge">Platform:</Text>
+          </View>
+          <View style={styles.filterBtnContainer}>
+            {platformItems.map(({ label, value }) => (
+              <GamesFilterChip
+                key={`platformItem-${value}`}
+                label={label}
+                active={platform === value}
+                onPress={() => handlePlatformChange(value)}
+              />
+            ))}
+          </View>
+          <View style={styles.titleContainer}>
+            <Icon
+              name="shape"
+              size={26}
+              color={theme.colors.tertiary}
+              style={styles.titleIcon}
+            />
+            <Text variant="labelLarge">Category:</Text>
+          </View>
+          <View style={styles.filterBtnContainer}>
+            {categoryItems.map(({ label, value }) => (
+              <GamesFilterChip
+                key={`categoryItem-${value}`}
+                label={label}
+                active={category === value}
+                onPress={() => handleCategoryChange(value)}
+              />
+            ))}
+          </View>
+          <View style={styles.titleContainer}>
+            <Icon
+              name="sort"
+              size={26}
+              color={theme.colors.tertiary}
+              style={styles.titleIcon}
+            />
+            <Text variant="labelLarge">Sort by:</Text>
+          </View>
+          <View style={styles.filterBtnContainer}>
+            {sortByItems.map(({ label, value }) => (
+              <GamesFilterChip
+                key={`sortByItem-${value}`}
+                label={label}
+                active={sortBy === value}
+                onPress={() => handleSortByChange(value)}
+              />
+            ))}
+          </View>
+        </ScrollView>
         <View style={styles.actionButtonsContainer}>
           <Button
             icon="close"
             textColor={theme.colors.tertiary}
             onPress={handleResetPress}
-            style={styles.closeButton}
+            mode="outlined"
+            style={styles.actionButton}
           >
             Clear
           </Button>
-          <Button mode="contained" icon="magnify" onPress={handleFilterPress}>
+          <View style={styles.actionButtonSeperator} />
+          <Button
+            mode="contained"
+            icon="magnify"
+            onPress={handleFilterPress}
+            style={styles.actionButton}
+          >
             Filter
           </Button>
         </View>
-      </ScrollView>
+      </SafeAreaView>
     </Surface>
   );
 };
 
 const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    height: '100%',
+  },
   container: {
     flex: 1,
-    padding: defaultTheme.spacing[3],
-    height: '100%',
+    margin: defaultTheme.spacing[3],
   },
   titleContainer: {
     flexDirection: 'row',
@@ -151,17 +158,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
-  filterBtn: {
-    marginBottom: defaultTheme.spacing[2],
-    marginRight: defaultTheme.spacing[2],
-    flexGrow: 1,
-  },
   actionButtonsContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    marginTop: defaultTheme.spacing[5],
+    marginTop: defaultTheme.spacing[3],
   },
-  closeButton: {
-    marginRight: defaultTheme.spacing[2],
+  actionButton: {
+    flex: 1,
+  },
+  actionButtonSeperator: {
+    width: defaultTheme.spacing[4],
   },
 });

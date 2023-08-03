@@ -9,7 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { PaperProvider } from 'react-native-paper';
 
-import { darkTheme, defaultTheme, lightTheme } from './config/theme';
+import { darkTheme, lightTheme } from './config/theme';
 import { queryClient } from './lib';
 import { HomeRoute } from './routes';
 
@@ -38,9 +38,5 @@ export const App = () => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-  },
-  container: {
-    flex: 1,
-    padding: defaultTheme.spacing[2],
   },
 });
