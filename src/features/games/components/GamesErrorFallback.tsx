@@ -2,11 +2,11 @@ import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { isAxiosError } from 'axios';
 import { Button, Surface, Text, useTheme } from 'react-native-paper';
-import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 import { Icon } from '@/components';
 
 import type { FallbackComponentProps } from 'react-native-error-boundary';
+import { defaultTheme } from '@/config/theme';
 
 export const GamesErrorFallback = ({
   error,
@@ -32,7 +32,7 @@ export const GamesErrorFallback = ({
       <Surface mode="flat" style={styles.container}>
         <Icon
           name="close-circle-outline"
-          size={wp(32)}
+          size={64}
           color={theme.colors.error}
         />
         <Text variant="bodyLarge" style={styles.message}>
@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    marginTop: wp(4),
+    marginTop: defaultTheme.spacing[4],
   },
 });

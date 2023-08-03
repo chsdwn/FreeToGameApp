@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Appbar, Badge } from 'react-native-paper';
+import { Appbar, Badge, Text } from 'react-native-paper';
 
 import { HomeStackNavigationProp } from '@/types';
 import { useGamesFilterStore } from '../store';
@@ -21,7 +21,13 @@ export const GamesListHeader = () => {
 
   return (
     <Appbar.Header statusBarHeight={0}>
-      <Appbar.Content title="Free Games" titleStyle={styles.title} />
+      <Appbar.Content
+        title={
+          <Text variant="titleSmall" style={styles.title}>
+            Free Games
+          </Text>
+        }
+      />
       <View>
         <Badge visible={!!badgeCount} size={16} style={styles.badge}>
           {badgeCount}

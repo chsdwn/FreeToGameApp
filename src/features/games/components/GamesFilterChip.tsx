@@ -6,13 +6,13 @@ import { defaultTheme, Theme } from '@/config/theme';
 
 type IProps = {
   label: string;
-  active: boolean;
+  active?: boolean;
   onPress?: () => void;
   onClose?: () => void;
 };
 export const GamesFilterChip = ({
   label,
-  active,
+  active = false,
   onPress,
   onClose,
 }: IProps) => {

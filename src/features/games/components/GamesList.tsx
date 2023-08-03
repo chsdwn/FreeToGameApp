@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
+import { defaultTheme } from '@/config/theme';
 import { GameCard } from './GameCard';
 import { useGames } from '../api';
 import { useGamesFilterStore } from '../store';
@@ -32,9 +32,9 @@ export const GamesList = () => {
 
 const styles = StyleSheet.create({
   content: {
-    padding: wp(3),
+    padding: defaultTheme.spacing[4],
   },
   seperator: {
-    height: wp(3),
+    height: defaultTheme.spacing[5],
   },
 });
