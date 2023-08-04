@@ -1,4 +1,3 @@
-import { Platform } from 'react-native';
 import {
   configureFonts,
   MD3DarkTheme,
@@ -6,78 +5,131 @@ import {
   MD3Theme,
 } from 'react-native-paper';
 
+import { scaleSizeByWidth } from '@/utils';
+
 export interface Theme extends MD3Theme {
   spacing: Record<number, number>;
 }
 
-const fontWeight700 = Platform.OS === 'ios' ? '700' : undefined;
-const fontWeight400 = Platform.OS === 'ios' ? '400' : undefined;
+export const breakpoints = {
+  sm: 600,
+  md: 768,
+};
+
+const roboto = 'Roboto-Regular';
+const robotoSlabMedium = 'RobotoSlab-Medium';
 const fonts = configureFonts({
   config: {
+    // # Title Fonts
+    headlineLarge: {
+      fontFamily: robotoSlabMedium,
+      fontSize: scaleSizeByWidth(8),
+      lineHeight: scaleSizeByWidth(8 * 1.5),
+      fontWeight: '500',
+      letterSpacing: 0,
+    },
+    headlineMedium: {
+      fontFamily: robotoSlabMedium,
+      fontSize: scaleSizeByWidth(7.5),
+      lineHeight: scaleSizeByWidth(7.5 * 1.5),
+      fontWeight: '500',
+      letterSpacing: 0,
+    },
+    headlineSmall: {
+      fontFamily: robotoSlabMedium,
+      fontSize: scaleSizeByWidth(7),
+      lineHeight: scaleSizeByWidth(7 * 1.5),
+      fontWeight: '500',
+      letterSpacing: 0,
+    },
+
     titleLarge: {
-      fontFamily: 'RobotoMono-Bold',
-      fontSize: 60,
-      lineHeight: 90,
-      fontWeight: fontWeight700,
-      letterSpacing: -3,
+      fontFamily: robotoSlabMedium,
+      fontSize: scaleSizeByWidth(6.5),
+      lineHeight: scaleSizeByWidth(6.5 * 1.5),
+      fontWeight: '500',
+      letterSpacing: 0,
     },
     titleMedium: {
-      fontFamily: 'RobotoMono-Bold',
-      fontSize: 48,
-      lineHeight: 72,
-      fontWeight: fontWeight700,
-      letterSpacing: -2,
+      fontFamily: robotoSlabMedium,
+      fontSize: scaleSizeByWidth(6),
+      lineHeight: scaleSizeByWidth(6 * 1.5),
+      fontWeight: '500',
+      letterSpacing: 0,
     },
     titleSmall: {
-      fontFamily: 'RobotoMono-Bold',
-      fontSize: 36,
-      lineHeight: 54,
-      fontWeight: fontWeight700,
-      letterSpacing: -1,
+      fontFamily: robotoSlabMedium,
+      fontSize: scaleSizeByWidth(5.5),
+      lineHeight: scaleSizeByWidth(5.5 * 1.5),
+      fontWeight: '500',
+      letterSpacing: 0,
+    },
+
+    // # Content Fonts
+    displayLarge: {
+      fontFamily: roboto,
+      fontSize: scaleSizeByWidth(7),
+      lineHeight: scaleSizeByWidth(7 * 1.5),
+      fontWeight: '400',
+      letterSpacing: 0,
+    },
+    displayMedium: {
+      fontFamily: roboto,
+      fontSize: scaleSizeByWidth(6.5),
+      lineHeight: scaleSizeByWidth(6.5 * 1.5),
+      fontWeight: '400',
+      letterSpacing: 0,
+    },
+    displaySmall: {
+      fontFamily: roboto,
+      fontSize: scaleSizeByWidth(6),
+      lineHeight: scaleSizeByWidth(6 * 1.5),
+      fontWeight: '400',
+      letterSpacing: 0,
     },
 
     bodyLarge: {
-      fontFamily: 'RobotoMono-Regular',
-      fontSize: 30,
-      lineHeight: 45,
-      fontWeight: fontWeight400,
-      letterSpacing: 0,
+      fontFamily: roboto,
+      fontSize: scaleSizeByWidth(5.5),
+      lineHeight: scaleSizeByWidth(5.5 * 1.5),
+      fontWeight: '400',
+      letterSpacing: 0.15,
     },
     bodyMedium: {
-      fontFamily: 'RobotoMono-Regular',
-      fontSize: 24,
-      lineHeight: 36,
-      fontWeight: fontWeight400,
-      letterSpacing: 0,
+      fontFamily: roboto,
+      fontSize: scaleSizeByWidth(5),
+      lineHeight: scaleSizeByWidth(5 * 1.5),
+      fontWeight: '400',
+      letterSpacing: 0.25,
     },
     bodySmall: {
-      fontFamily: 'RobotoMono-Regular',
-      fontSize: 20,
-      lineHeight: 30,
-      fontWeight: fontWeight400,
-      letterSpacing: 0,
+      fontFamily: roboto,
+      fontSize: scaleSizeByWidth(4.5),
+      lineHeight: scaleSizeByWidth(4.5 * 1.5),
+      fontWeight: '400',
+      letterSpacing: 0.4,
     },
 
     labelLarge: {
-      fontFamily: 'RobotoMono-Regular',
-      fontSize: 18,
-      lineHeight: 27,
-      fontWeight: fontWeight400,
-      letterSpacing: 0,
+      fontFamily: roboto,
+      fontSize: scaleSizeByWidth(4),
+      lineHeight: scaleSizeByWidth(4 * 1.5),
+      fontWeight: '400',
+      letterSpacing: 0.1,
     },
     labelMedium: {
-      fontFamily: 'RobotoMono-Regular',
-      fontSize: 16,
-      lineHeight: 24,
-      fontWeight: fontWeight400,
-      letterSpacing: 0,
+      fontFamily: roboto,
+      fontSize: scaleSizeByWidth(3.5),
+      lineHeight: scaleSizeByWidth(3.5 * 1.5),
+      fontWeight: '400',
+      letterSpacing: 0.5,
     },
     labelSmall: {
-      fontFamily: 'RobotoMono-Regular',
-      fontSize: 14,
-      lineHeight: 21,
-      fontWeight: fontWeight400,
-      letterSpacing: 0,
+      fontFamily: roboto,
+      fontSize: scaleSizeByWidth(3),
+      lineHeight: scaleSizeByWidth(3 * 1.5),
+      fontWeight: '400',
+      letterSpacing: 0.5,
     },
   },
 });

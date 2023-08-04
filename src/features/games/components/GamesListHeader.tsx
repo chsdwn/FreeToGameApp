@@ -23,7 +23,7 @@ export const GamesListHeader = () => {
     <Appbar.Header statusBarHeight={0}>
       <Appbar.Content
         title={
-          <Text variant="titleSmall" style={styles.title}>
+          <Text variant="titleLarge" style={styles.title}>
             Free Games
           </Text>
         }
@@ -32,7 +32,7 @@ export const GamesListHeader = () => {
         <Badge visible={!!badgeCount} size={16} style={styles.badge}>
           {badgeCount}
         </Badge>
-        <Appbar.Action icon="filter-variant" onPress={handleFilterPress} />
+        <Appbar.Action icon="filter-outline" onPress={handleFilterPress} />
       </View>
     </Appbar.Header>
   );

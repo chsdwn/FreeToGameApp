@@ -13,35 +13,33 @@ export const GameCard = React.memo(({ game }: IProps) => {
   const theme = useTheme();
 
   return (
-    <Card elevation={3}>
+    <Card elevation={3} style={{ backgroundColor: theme.colors.surface }}>
       <Image
         source={{ uri: game.thumbnail }}
         style={styles.img}
         resizeMode="contain"
       />
-      <Card.Title
-        title={<Text variant="bodyMedium">{game.title}</Text>}
-        titleStyle={styles.title}
-      />
-      <View style={[styles.line, { borderTopColor: theme.colors.onSurface }]} />
+      <Text variant="titleLarge" style={styles.title}>
+        {game.title}
+      </Text>
       <View style={styles.platformGenreContainer}>
         <View style={styles.iconLabelContainer}>
           <Icon
             name="layers-triple"
-            size={22}
+            size={20}
             color={theme.colors.tertiary}
             style={styles.icon}
           />
-          <Text variant="labelMedium">{game.platform}</Text>
+          <Text variant="labelLarge">{game.platform}</Text>
         </View>
         <View style={styles.iconLabelContainer}>
           <Icon
             name="shape"
-            size={22}
+            size={20}
             color={theme.colors.tertiary}
             style={styles.icon}
           />
-          <Text variant="labelMedium">{game.genre}</Text>
+          <Text variant="labelLarge">{game.genre}</Text>
         </View>
       </View>
     </Card>
@@ -54,15 +52,19 @@ const styles = StyleSheet.create({
     borderRadius: DefaultTheme.roundness * 2,
   },
   title: {
-    textAlign: 'left',
+    textAlign: 'center',
+    paddingVertical: defaultTheme.spacing[2],
   },
   line: {
     borderWidth: StyleSheet.hairlineWidth,
     marginHorizontal: defaultTheme.spacing[3],
   },
   platformGenreContainer: {
-    marginVertical: defaultTheme.spacing[3],
+    marginBottom: defaultTheme.spacing[3],
     marginHorizontal: defaultTheme.spacing[4],
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
   },
   iconLabelContainer: {
     flexDirection: 'row',

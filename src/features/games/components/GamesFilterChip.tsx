@@ -25,7 +25,7 @@ export const GamesFilterChip = ({
       onClose={onClose}
       style={[styles.chip, { borderColor: theme.colors.tertiary }]}
     >
-      <Text variant="labelSmall">{label}</Text>
+      <Text variant="labelMedium">{label}</Text>
     </Chip>
   );
 };

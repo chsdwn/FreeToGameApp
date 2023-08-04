@@ -1,0 +1,1 @@
+export { scaleSizeByWidth } from './scaleSizeByWidth';
