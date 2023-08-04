@@ -5,7 +5,7 @@ import {
   MD3Theme,
 } from 'react-native-paper';
 
-import { scaleSizeByWidth } from '@/utils';
+import { scaleSizeByWidth } from '@/utils/scaleSizeByWidth';
 
 export interface Theme extends MD3Theme {
   spacing: Record<number, number>;

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Card, DefaultTheme, Text, useTheme } from 'react-native-paper';
+import { Image } from 'expo-image';
 
 import { Icon } from '@/components';
 import { defaultTheme } from '@/config/theme';
@@ -14,11 +15,7 @@ export const GameCard = React.memo(({ game }: IProps) => {
 
   return (
     <Card elevation={3} style={{ backgroundColor: theme.colors.surface }}>
-      <Image
-        source={{ uri: game.thumbnail }}
-        style={styles.img}
-        resizeMode="contain"
-      />
+      <Image source={game.thumbnail} style={styles.img} contentFit="contain" />
       <Text variant="titleLarge" style={styles.title}>
         {game.title}
       </Text>
