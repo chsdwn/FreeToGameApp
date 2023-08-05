@@ -15,7 +15,6 @@ const getGames = ({ platform, category, sortBy }: IFilter) => {
   if (platform) url += `platform=${platform}&`;
   if (category) url += `category=${category}&`;
   if (sortBy) url += `sort-by=${sortBy}&`;
-  console.log('url:', url);
 
   return axios.get<IGame[]>(url).then((res) => res.data);
 };

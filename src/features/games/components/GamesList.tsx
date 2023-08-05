@@ -1,5 +1,6 @@
 import React from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
 
 import { defaultTheme } from '@/config/theme';
 import { GameCard } from './GameCard';
@@ -17,7 +18,7 @@ export const GamesList = () => {
   };
 
   return (
-    <FlatList
+    <FlashList
       data={gamesQuery.data}
       keyExtractor={(item) => `game-${item.id}`}
       renderItem={({ item }) => <GameCard game={item} />}
@@ -25,7 +26,7 @@ export const GamesList = () => {
       ItemSeparatorComponent={Seperator}
       refreshing={gamesQuery.isFetching || gamesQuery.isLoading}
       onRefresh={handleRefresh}
-      initialNumToRender={5}
+      estimatedItemSize={325}
     />
   );
 };
