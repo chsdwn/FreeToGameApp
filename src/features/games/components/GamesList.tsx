@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 
 import { defaultTheme } from '@/config/theme';
+import { useDebounce } from '@/hooks';
 import { GameCard } from './GameCard';
+import { GameCardSkeleton } from './GameCardSkeleton';
 import { useGames } from '../api';
 import { useGamesFilterStore } from '../store';
 
@@ -13,9 +15,25 @@ export const GamesList = () => {
   const { platform, category, sortBy } = useGamesFilterStore();
   const gamesQuery = useGames({ platform, category, sortBy });
 
+  const debouncedIsFetching = useDebounce(gamesQuery.isFetching, 500);
+  const debouncedIsLoading = useDebounce(gamesQuery.isLoading, 500);
+
   const handleRefresh = () => {
     gamesQuery.refetch();
   };
+
+  if (debouncedIsLoading) {
+    return (
+      <ScrollView
+        contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
+      >
+        <GameCardSkeleton />
+        <Seperator />
+        <GameCardSkeleton />
+      </ScrollView>
+    );
+  }
 
   return (
     <FlashList
@@ -24,7 +42,7 @@ export const GamesList = () => {
       renderItem={({ item }) => <GameCard game={item} />}
       contentContainerStyle={styles.content}
       ItemSeparatorComponent={Seperator}
-      refreshing={gamesQuery.isFetching || gamesQuery.isLoading}
+      refreshing={debouncedIsFetching}
       onRefresh={handleRefresh}
       estimatedItemSize={325}
     />
