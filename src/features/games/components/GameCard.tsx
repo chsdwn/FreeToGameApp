@@ -5,6 +5,7 @@ import { Image } from 'expo-image';
 
 import { Icon } from '@/components';
 import { defaultTheme } from '@/config/theme';
+import { scaleSizeByWidth } from '@/utils';
 import type { IGame } from '../types';
 
 const imagePlaceholder =
@@ -34,7 +35,7 @@ export const GameCard = React.memo(({ game }: IProps) => {
         <View style={styles.iconLabelContainer}>
           <Icon
             name="layers-triple"
-            size={20}
+            size={scaleSizeByWidth(5.5)}
             color={theme.colors.tertiary}
             style={styles.icon}
           />
@@ -43,7 +44,7 @@ export const GameCard = React.memo(({ game }: IProps) => {
         <View style={styles.iconLabelContainer}>
           <Icon
             name="shape"
-            size={20}
+            size={scaleSizeByWidth(5.5)}
             color={theme.colors.tertiary}
             style={styles.icon}
           />

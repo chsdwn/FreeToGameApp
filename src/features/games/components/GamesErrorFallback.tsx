@@ -4,9 +4,10 @@ import { isAxiosError } from 'axios';
 import { Button, Surface, Text, useTheme } from 'react-native-paper';
 
 import { Icon } from '@/components';
+import { defaultTheme } from '@/config/theme';
+import { scaleSizeByWidth } from '@/utils';
 
 import type { FallbackComponentProps } from 'react-native-error-boundary';
-import { defaultTheme } from '@/config/theme';
 
 export const GamesErrorFallback = ({
   error,
@@ -14,7 +15,7 @@ export const GamesErrorFallback = ({
 }: FallbackComponentProps) => {
   const theme = useTheme();
 
-  let errorMessage = 'An error occured.';
+  let errorMessage = 'An error occured. While fetching games.';
   if (isAxiosError(error)) {
     const status = error.response?.status;
     if (status === 404) {
@@ -31,8 +32,8 @@ export const GamesErrorFallback = ({
     <SafeAreaView style={styles.root}>
       <Surface mode="flat" style={styles.container}>
         <Icon
-          name="close-circle-outline"
-          size={64}
+          name="alert-circle-outline"
+          size={scaleSizeByWidth(32)}
           color={theme.colors.error}
         />
         <Text variant="bodyLarge" style={styles.message}>
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    margin: defaultTheme.spacing[3],
   },
   message: {
     textAlign: 'center',

@@ -9,8 +9,8 @@ export const GamesScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Surface style={styles.container}>
-        <GamesListHeader />
         <ErrorBoundary FallbackComponent={GamesErrorFallback}>
+          <GamesListHeader />
           <GamesList />
         </ErrorBoundary>
       </Surface>

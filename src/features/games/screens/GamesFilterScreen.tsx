@@ -5,6 +5,7 @@ import { Button, Surface, Text, useTheme } from 'react-native-paper';
 
 import { Icon } from '@/components';
 import { defaultTheme, Theme } from '@/config/theme';
+import { scaleSizeByWidth } from '@/utils';
 import { GamesFilterChip } from '../components';
 import { categoryItems, platformItems, sortByItems } from '../config';
 import { useGamesFilterStore } from '../store';
@@ -56,7 +57,7 @@ export const GamesFilterScreen = () => {
           <View style={styles.titleContainer}>
             <Icon
               name="layers-triple"
-              size={26}
+              size={scaleSizeByWidth(5.5)}
               color={theme.colors.tertiary}
               style={[styles.titleIcon]}
             />
@@ -72,10 +73,11 @@ export const GamesFilterScreen = () => {
               />
             ))}
           </View>
+
           <View style={styles.titleContainer}>
             <Icon
               name="shape"
-              size={26}
+              size={scaleSizeByWidth(5.5)}
               color={theme.colors.tertiary}
               style={styles.titleIcon}
             />
@@ -91,10 +93,11 @@ export const GamesFilterScreen = () => {
               />
             ))}
           </View>
+
           <View style={styles.titleContainer}>
             <Icon
               name="sort"
-              size={26}
+              size={scaleSizeByWidth(5.5)}
               color={theme.colors.tertiary}
               style={styles.titleIcon}
             />
@@ -111,6 +114,7 @@ export const GamesFilterScreen = () => {
             ))}
           </View>
         </ScrollView>
+
         <View style={styles.actionButtonsContainer}>
           <Button
             icon="close"

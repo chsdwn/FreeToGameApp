@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { Appbar, Badge, Text } from 'react-native-paper';
 
 import { HomeStackNavigationProp } from '@/types';
+import { scaleSizeByWidth } from '@/utils';
 import { useGamesFilterStore } from '../store';
 
 export const GamesListHeader = () => {
@@ -23,16 +24,24 @@ export const GamesListHeader = () => {
     <Appbar.Header statusBarHeight={0}>
       <Appbar.Content
         title={
-          <Text variant="titleLarge" style={styles.title}>
+          <Text variant="headlineMedium" style={styles.title}>
             Free Games
           </Text>
         }
       />
       <View>
-        <Badge visible={!!badgeCount} size={16} style={styles.badge}>
+        <Badge
+          visible={!!badgeCount}
+          size={scaleSizeByWidth(4)}
+          style={styles.badge}
+        >
           {badgeCount}
         </Badge>
-        <Appbar.Action icon="filter-outline" onPress={handleFilterPress} />
+        <Appbar.Action
+          icon="filter-outline"
+          size={scaleSizeByWidth(6.5)}
+          onPress={handleFilterPress}
+        />
       </View>
     </Appbar.Header>
   );
