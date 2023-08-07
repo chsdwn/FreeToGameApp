@@ -11,11 +11,6 @@ export interface Theme extends MD3Theme {
   spacing: Record<number, number>;
 }
 
-export const breakpoints = {
-  sm: 600,
-  md: 768,
-};
-
 const roboto = 'Roboto-Regular';
 const robotoSlabMedium = 'RobotoSlab-Medium';
 const fonts = configureFonts({
