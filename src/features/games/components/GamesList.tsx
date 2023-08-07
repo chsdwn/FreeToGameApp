@@ -6,6 +6,7 @@ import { defaultTheme } from '@/config/theme';
 import { useDebounce } from '@/hooks';
 import { GameCard } from './GameCard';
 import { GameCardSkeleton } from './GameCardSkeleton';
+import { GamesListEmpty } from './GamesListEmpty';
 import { useGames } from '../api';
 import { useGamesFilterStore } from '../store';
 
@@ -42,6 +43,7 @@ export const GamesList = () => {
       renderItem={({ item }) => <GameCard game={item} />}
       contentContainerStyle={styles.content}
       ItemSeparatorComponent={Seperator}
+      ListEmptyComponent={<GamesListEmpty />}
       refreshing={debouncedIsFetching}
       onRefresh={handleRefresh}
       estimatedItemSize={325}
