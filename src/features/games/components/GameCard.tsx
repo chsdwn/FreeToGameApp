@@ -7,6 +7,11 @@ import { Icon } from '@/components';
 import { defaultTheme } from '@/config/theme';
 import type { IGame } from '../types';
 
+const imagePlaceholder =
+  '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[f' +
+  'QayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ay' +
+  'ayj[ayfjj[j[ayjuayj[';
+
 type IProps = {
   game: IGame;
 };
@@ -15,7 +20,13 @@ export const GameCard = React.memo(({ game }: IProps) => {
 
   return (
     <Card elevation={3} style={{ backgroundColor: theme.colors.surface }}>
-      <Image source={game.thumbnail} style={styles.img} contentFit="contain" />
+      <Image
+        source={game.thumbnail}
+        style={styles.img}
+        contentFit="contain"
+        placeholder={imagePlaceholder}
+        recyclingKey={`game-thumbnail-${game.id}`}
+      />
       <Text variant="titleLarge" style={styles.title}>
         {game.title}
       </Text>
