@@ -1,11 +1,10 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { isAxiosError } from 'axios';
-import { Button, Surface, Text, useTheme } from 'react-native-paper';
+import { Button, Surface, Text } from 'react-native-paper';
 
 import { Icon } from '@/components';
-import { defaultTheme } from '@/config/theme';
-import { scaleSizeByWidth } from '@/utils';
+import { useScale, useTheme } from '@/hooks';
 
 import type { FallbackComponentProps } from 'react-native-error-boundary';
 
@@ -14,8 +13,9 @@ export const GamesErrorFallback = ({
   resetError,
 }: FallbackComponentProps) => {
   const theme = useTheme();
+  const { scaleByWidth } = useScale();
 
-  let errorMessage = 'An error occured. While fetching games.';
+  let errorMessage = 'An error occured while fetching games.';
   if (isAxiosError(error)) {
     const status = error.response?.status;
     if (status === 404) {
@@ -30,16 +30,23 @@ export const GamesErrorFallback = ({
 
   return (
     <SafeAreaView style={styles.root}>
-      <Surface mode="flat" style={styles.container}>
+      <Surface
+        mode="flat"
+        style={[styles.container, { margin: theme.spacing[3] }]}
+      >
         <Icon
           name="alert-circle-outline"
-          size={scaleSizeByWidth(32)}
+          size={scaleByWidth(36)}
           color={theme.colors.error}
         />
         <Text variant="bodyLarge" style={styles.message}>
           {errorMessage}
         </Text>
-        <Button onPress={resetError} mode="outlined" style={styles.button}>
+        <Button
+          onPress={resetError}
+          mode="outlined"
+          style={{ marginTop: theme.spacing[4] }}
+        >
           Try Again
         </Button>
       </Surface>
@@ -55,12 +62,8 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: defaultTheme.spacing[3],
   },
   message: {
     textAlign: 'center',
-  },
-  button: {
-    marginTop: defaultTheme.spacing[4],
   },
 });

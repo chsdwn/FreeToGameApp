@@ -1,18 +1,19 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Text, useTheme } from 'react-native-paper';
+import { Text } from 'react-native-paper';
 
 import { Icon } from '@/components';
-import { scaleSizeByWidth } from '@/utils';
+import { useScale, useTheme } from '@/hooks';
 
 export const GamesListEmpty = () => {
   const theme = useTheme();
+  const { scaleByWidth } = useScale();
 
   return (
     <View style={styles.container}>
       <Icon
         name="controller-classic-outline"
-        size={scaleSizeByWidth(32)}
+        size={scaleByWidth(32)}
         color={theme.colors.tertiary}
       />
       <Text variant="bodyLarge">No games found</Text>

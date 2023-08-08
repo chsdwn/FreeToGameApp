@@ -3,11 +3,12 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Appbar, Badge, Text } from 'react-native-paper';
 
+import { useScale } from '@/hooks';
 import { HomeStackNavigationProp } from '@/types';
-import { scaleSizeByWidth } from '@/utils';
 import { useGamesFilterStore } from '../store';
 
 export const GamesListHeader = () => {
+  const { scaleByWidth } = useScale();
   const navigation = useNavigation<HomeStackNavigationProp>();
   const { platform, category, sortBy } = useGamesFilterStore();
 
@@ -32,14 +33,14 @@ export const GamesListHeader = () => {
       <View>
         <Badge
           visible={!!badgeCount}
-          size={scaleSizeByWidth(4)}
+          size={scaleByWidth(4)}
           style={styles.badge}
         >
           {badgeCount}
         </Badge>
         <Appbar.Action
           icon="filter-outline"
-          size={scaleSizeByWidth(6.5)}
+          size={scaleByWidth(7)}
           onPress={handleFilterPress}
         />
       </View>
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
   },
   badge: {
     position: 'absolute',
-    top: 6,
-    right: 6,
+    top: 8,
+    right: 8,
   },
 });

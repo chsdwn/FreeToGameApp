@@ -1,18 +1,24 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, useWindowDimensions, View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 
-import { defaultTheme } from '@/config/theme';
-import { useDebounce } from '@/hooks';
+import { BREAKPOINTS } from '@/config';
+import { useDebounce, useTheme } from '@/hooks';
 import { GameCard } from './GameCard';
 import { GameCardSkeleton } from './GameCardSkeleton';
 import { GamesListEmpty } from './GamesListEmpty';
 import { useGames } from '../api';
 import { useGamesFilterStore } from '../store';
 
-const Seperator = () => <View style={styles.seperator} />;
+const Seperator = () => {
+  const theme = useTheme();
+
+  return <View style={{ height: theme.spacing[5] }} />;
+};
 
 export const GamesList = () => {
+  const theme = useTheme();
+  const { width } = useWindowDimensions();
   const { platform, category, sortBy } = useGamesFilterStore();
   const gamesQuery = useGames({ platform, category, sortBy });
 
@@ -23,12 +29,20 @@ export const GamesList = () => {
     gamesQuery.refetch();
   };
 
-  if (debouncedIsLoading) {
+  let numColumns = 1;
+  if (width >= BREAKPOINTS.sm) numColumns = 2;
+  if (width >= BREAKPOINTS.md) numColumns = 3;
+
+  if (gamesQuery.isLoading || debouncedIsLoading) {
     return (
       <ScrollView
-        contentContainerStyle={styles.content}
+        contentContainerStyle={{ padding: theme.spacing[4] }}
         showsVerticalScrollIndicator={false}
       >
+        <GameCardSkeleton />
+        <Seperator />
+        <GameCardSkeleton />
+        <Seperator />
         <GameCardSkeleton />
         <Seperator />
         <GameCardSkeleton />
@@ -41,21 +55,13 @@ export const GamesList = () => {
       data={gamesQuery.data}
       keyExtractor={(item) => `game-${item.id}`}
       renderItem={({ item }) => <GameCard game={item} />}
-      contentContainerStyle={styles.content}
+      contentContainerStyle={{ padding: theme.spacing[4] }}
       ItemSeparatorComponent={Seperator}
       ListEmptyComponent={<GamesListEmpty />}
-      refreshing={debouncedIsFetching}
+      refreshing={gamesQuery.isFetching || debouncedIsFetching}
       onRefresh={handleRefresh}
       estimatedItemSize={325}
+      numColumns={numColumns}
     />
   );
 };
-
-const styles = StyleSheet.create({
-  content: {
-    padding: defaultTheme.spacing[4],
-  },
-  seperator: {
-    height: defaultTheme.spacing[5],
-  },
-});

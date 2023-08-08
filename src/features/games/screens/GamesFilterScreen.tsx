@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
-import { Button, Surface, Text, useTheme } from 'react-native-paper';
+import { Button, Surface, Text } from 'react-native-paper';
 
 import { Icon } from '@/components';
-import { defaultTheme, Theme } from '@/config/theme';
-import { scaleSizeByWidth } from '@/utils';
+import { useScale, useTheme } from '@/hooks';
 import { GamesFilterChip } from '../components';
 import { categoryItems, platformItems, sortByItems } from '../config';
 import { useGamesFilterStore } from '../store';
 import { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
 
 export const GamesFilterScreen = () => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
+  const { scaleByWidth } = useScale();
   const navigation = useNavigation();
   const gamesFilterStore = useGamesFilterStore();
 
@@ -52,18 +52,22 @@ export const GamesFilterScreen = () => {
 
   return (
     <Surface style={styles.root}>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, { margin: theme.spacing[3] }]}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.titleContainer}>
+          <View
+            style={[styles.titleContainer, { marginTop: theme.spacing[3] }]}
+          >
             <Icon
               name="layers-triple"
-              size={scaleSizeByWidth(5.5)}
+              size={scaleByWidth(6.5)}
               color={theme.colors.tertiary}
-              style={[styles.titleIcon]}
+              style={{ marginRight: theme.spacing[1] }}
             />
             <Text variant="labelLarge">Platform:</Text>
           </View>
-          <View style={styles.filterBtnContainer}>
+          <View
+            style={[styles.filterBtnContainer, { marginTop: theme.spacing[2] }]}
+          >
             {platformItems.map(({ label, value }) => (
               <GamesFilterChip
                 key={`platformItem-${value}`}
@@ -74,16 +78,20 @@ export const GamesFilterScreen = () => {
             ))}
           </View>
 
-          <View style={styles.titleContainer}>
+          <View
+            style={[styles.titleContainer, { marginTop: theme.spacing[3] }]}
+          >
             <Icon
               name="shape"
-              size={scaleSizeByWidth(5.5)}
+              size={scaleByWidth(6.5)}
               color={theme.colors.tertiary}
-              style={styles.titleIcon}
+              style={{ marginRight: theme.spacing[1] }}
             />
             <Text variant="labelLarge">Category:</Text>
           </View>
-          <View style={styles.filterBtnContainer}>
+          <View
+            style={[styles.filterBtnContainer, { marginTop: theme.spacing[2] }]}
+          >
             {categoryItems.map(({ label, value }) => (
               <GamesFilterChip
                 key={`categoryItem-${value}`}
@@ -94,16 +102,20 @@ export const GamesFilterScreen = () => {
             ))}
           </View>
 
-          <View style={styles.titleContainer}>
+          <View
+            style={[styles.titleContainer, { marginTop: theme.spacing[3] }]}
+          >
             <Icon
               name="sort"
-              size={scaleSizeByWidth(5.5)}
+              size={scaleByWidth(6.5)}
               color={theme.colors.tertiary}
-              style={styles.titleIcon}
+              style={{ marginRight: theme.spacing[1] }}
             />
             <Text variant="labelLarge">Sort by:</Text>
           </View>
-          <View style={styles.filterBtnContainer}>
+          <View
+            style={[styles.filterBtnContainer, { marginTop: theme.spacing[2] }]}
+          >
             {sortByItems.map(({ label, value }) => (
               <GamesFilterChip
                 key={`sortByItem-${value}`}
@@ -115,7 +127,12 @@ export const GamesFilterScreen = () => {
           </View>
         </ScrollView>
 
-        <View style={styles.actionButtonsContainer}>
+        <View
+          style={[
+            styles.actionButtonsContainer,
+            { marginTop: theme.spacing[3] },
+          ]}
+        >
           <Button
             icon="close"
             textColor={theme.colors.tertiary}
@@ -125,7 +142,7 @@ export const GamesFilterScreen = () => {
           >
             Clear
           </Button>
-          <View style={styles.actionButtonSeperator} />
+          <View style={{ width: theme.spacing[4] }} />
           <Button
             mode="contained"
             icon="magnify"
@@ -147,30 +164,20 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    margin: defaultTheme.spacing[3],
   },
   titleContainer: {
     flexDirection: 'row',
     alignContent: 'center',
-    marginTop: defaultTheme.spacing[3],
-  },
-  titleIcon: {
-    marginRight: defaultTheme.spacing[1],
   },
   filterBtnContainer: {
-    marginTop: defaultTheme.spacing[2],
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
   actionButtonsContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    marginTop: defaultTheme.spacing[3],
   },
   actionButton: {
     flex: 1,
-  },
-  actionButtonSeperator: {
-    width: defaultTheme.spacing[4],
   },
 });

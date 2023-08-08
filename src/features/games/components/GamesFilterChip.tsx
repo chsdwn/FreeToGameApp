@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Chip, Text, useTheme } from 'react-native-paper';
+import { Chip, Text } from 'react-native-paper';
 
-import { defaultTheme, Theme } from '@/config/theme';
+import { useTheme } from '@/hooks';
 
 type IProps = {
   label: string;
@@ -16,14 +16,21 @@ export const GamesFilterChip = ({
   onPress,
   onClose,
 }: IProps) => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   return (
     <Chip
       mode={active ? 'flat' : 'outlined'}
       onPress={onPress}
       onClose={onClose}
-      style={[styles.chip, { borderColor: theme.colors.tertiary }]}
+      style={[
+        styles.chip,
+        {
+          borderColor: theme.colors.tertiary,
+          marginBottom: theme.spacing[2],
+          marginRight: theme.spacing[2],
+        },
+      ]}
     >
       <Text variant="labelMedium">{label}</Text>
     </Chip>
@@ -32,8 +39,6 @@ export const GamesFilterChip = ({
 
 const styles = StyleSheet.create({
   chip: {
-    marginBottom: defaultTheme.spacing[2],
-    marginRight: defaultTheme.spacing[2],
     borderWidth: 1,
   },
 });
