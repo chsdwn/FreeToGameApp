@@ -23,7 +23,13 @@ export const GameCard = React.memo(({ game }: IProps) => {
   return (
     <Card
       elevation={3}
-      style={[styles.card, { backgroundColor: theme.colors.surface }]}
+      style={[
+        styles.card,
+        {
+          backgroundColor: theme.colors.surface,
+          margin: theme.spacing[2],
+        },
+      ]}
     >
       <Image
         source={game.thumbnail}

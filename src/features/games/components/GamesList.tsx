@@ -55,8 +55,7 @@ export const GamesList = () => {
       data={gamesQuery.data}
       keyExtractor={(item) => `game-${item.id}`}
       renderItem={({ item }) => <GameCard game={item} />}
-      contentContainerStyle={{ padding: theme.spacing[4] }}
-      ItemSeparatorComponent={Seperator}
+      contentContainerStyle={{ padding: theme.spacing[2] }}
       ListEmptyComponent={<GamesListEmpty />}
       refreshing={gamesQuery.isFetching || debouncedIsFetching}
       onRefresh={handleRefresh}
