@@ -13,7 +13,7 @@ import { useGamesFilterStore } from '../store';
 const Seperator = () => {
   const theme = useTheme();
 
-  return <View style={{ height: theme.spacing[5] }} />;
+  return <View style={{ height: theme.spacing[4] }} />;
 };
 
 export const GamesList = () => {

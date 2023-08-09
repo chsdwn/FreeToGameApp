@@ -22,6 +22,11 @@ module.exports = {
             importNames: ['default'],
             message: 'Import pre-configured axios from @/lib',
           },
+          {
+            name: 'react-native-paper',
+            importNames: ['useTheme'],
+            message: 'Import useTheme from @/hooks',
+          },
         ],
       },
     ],

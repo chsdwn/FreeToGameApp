@@ -1,13 +1,14 @@
-import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Appbar, Badge, Text } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/core';
+import { Badge, IconButton, Surface, Text } from 'react-native-paper';
 
-import { useScale } from '@/hooks';
+import { useScale, useTheme } from '@/hooks';
 import { HomeStackNavigationProp } from '@/types';
 import { useGamesFilterStore } from '../store';
 
 export const GamesListHeader = () => {
+  const theme = useTheme();
   const { scaleByWidth } = useScale();
   const navigation = useNavigation<HomeStackNavigationProp>();
   const { platform, category, sortBy } = useGamesFilterStore();
@@ -22,15 +23,15 @@ export const GamesListHeader = () => {
   };
 
   return (
-    <Appbar.Header statusBarHeight={0}>
-      <Appbar.Content
-        title={
-          <Text variant="headlineMedium" style={styles.title}>
-            Free Games
-          </Text>
-        }
-      />
-      <View>
+    <Surface
+      elevation={3}
+      style={[styles.header, { backgroundColor: theme.colors.surface }]}
+    >
+      <View style={styles.placeholder} />
+      <Text variant="headlineMedium" style={styles.title}>
+        Free Games
+      </Text>
+      <View style={styles.filterButtonContainer}>
         <Badge
           visible={!!badgeCount}
           size={scaleByWidth(4)}
@@ -38,19 +39,33 @@ export const GamesListHeader = () => {
         >
           {badgeCount}
         </Badge>
-        <Appbar.Action
+        <IconButton
           icon="filter-outline"
           size={scaleByWidth(7)}
           onPress={handleFilterPress}
         />
       </View>
-    </Appbar.Header>
+    </Surface>
   );
 };
 
 const styles = StyleSheet.create({
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  },
+  placeholder: {
+    flex: 0.3,
+  },
   title: {
     textAlign: 'center',
+    flex: 1,
+  },
+  filterButtonContainer: {
+    alignItems: 'flex-end',
+    flex: 0.3,
   },
   badge: {
     position: 'absolute',
