@@ -32,6 +32,11 @@ export const GamesListHeader = () => {
         Free Games
       </Text>
       <View style={styles.filterButtonContainer}>
+        <IconButton
+          icon="filter-outline"
+          size={scaleByWidth(7)}
+          onPress={handleFilterPress}
+        />
         <Badge
           visible={!!badgeCount}
           size={scaleByWidth(4)}
@@ -39,11 +44,6 @@ export const GamesListHeader = () => {
         >
           {badgeCount}
         </Badge>
-        <IconButton
-          icon="filter-outline"
-          size={scaleByWidth(7)}
-          onPress={handleFilterPress}
-        />
       </View>
     </Surface>
   );
