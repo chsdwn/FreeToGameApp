@@ -38,42 +38,44 @@ export const GameCard = React.memo(({ game }: IProps) => {
         placeholder={imagePlaceholder}
         recyclingKey={`game-thumbnail-${game.id}`}
       />
-      <Text
-        variant="titleLarge"
-        style={[styles.title, { paddingVertical: theme.spacing[2] }]}
-      >
-        {game.title}
-      </Text>
-      <View
-        style={[
-          styles.platformGenreContainer,
-          {
-            marginBottom: theme.spacing[3],
-            marginHorizontal: theme.spacing[4],
-          },
-        ]}
-      >
-        <View
-          style={[styles.iconLabelContainer, { marginTop: theme.spacing[1] }]}
+      <View style={{ marginHorizontal: theme.spacing[2] }}>
+        <Text
+          variant="titleLarge"
+          style={[styles.title, { paddingVertical: theme.spacing[2] }]}
         >
-          <Icon
-            name="layers-triple"
-            size={scaleByWidth(6.5)}
-            color={theme.colors.tertiary}
-            style={{ marginRight: theme.spacing[2] }}
-          />
-          <Text variant="labelLarge">{game.platform}</Text>
-        </View>
+          {game.title}
+        </Text>
         <View
-          style={[styles.iconLabelContainer, { marginTop: theme.spacing[1] }]}
+          style={[
+            styles.platformGenreContainer,
+            {
+              marginBottom: theme.spacing[3],
+              marginHorizontal: theme.spacing[4],
+            },
+          ]}
         >
-          <Icon
-            name="shape"
-            size={scaleByWidth(6.5)}
-            color={theme.colors.tertiary}
-            style={{ marginRight: theme.spacing[2] }}
-          />
-          <Text variant="labelLarge">{game.genre}</Text>
+          <View
+            style={[styles.iconLabelContainer, { marginTop: theme.spacing[1] }]}
+          >
+            <Icon
+              name="layers-triple"
+              size={scaleByWidth(6.5)}
+              color={theme.colors.tertiary}
+              style={{ marginRight: theme.spacing[2] }}
+            />
+            <Text variant="labelLarge">{game.platform}</Text>
+          </View>
+          <View
+            style={[styles.iconLabelContainer, { marginTop: theme.spacing[1] }]}
+          >
+            <Icon
+              name="shape"
+              size={scaleByWidth(6.5)}
+              color={theme.colors.tertiary}
+              style={{ marginRight: theme.spacing[2] }}
+            />
+            <Text variant="labelLarge">{game.genre}</Text>
+          </View>
         </View>
       </View>
     </Card>
