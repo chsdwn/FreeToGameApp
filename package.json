@@ -9,6 +9,7 @@
     "android-light-theme": "adb shell 'cmd uimode night no'",
     "ios": "react-native run-ios --simulator=\"iPhone 14 Pro Max\"",
     "ios-release": "react-native run-ios --simulator=\"iPhone 14 Pro Max\" --mode Release",
+    "ipados": "react-native run-ios --simulator=\"iPad Air\"",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"

@@ -30,6 +30,12 @@ module.exports = {
         ],
       },
     ],
+    'react-hooks/exhaustive-deps': [
+      'error',
+      {
+        additionalHooks: '(useStyle)',
+      },
+    ],
     curly: 'off',
   },
 };
