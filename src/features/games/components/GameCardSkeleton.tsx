@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Surface } from 'react-native-paper';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 
-import { useScale, useTheme } from '@/hooks';
+import { useScale, useStyle, useTheme } from '@/hooks';
 
 export const GameCardSkeleton = () => {
   const theme = useTheme();
@@ -12,13 +12,21 @@ export const GameCardSkeleton = () => {
   return (
     <Surface
       elevation={3}
-      style={[styles.container, { backgroundColor: theme.colors.surface }]}
+      style={useStyle(
+        () => [
+          styles.container,
+          { backgroundColor: theme.colors.surface, margin: theme.spacing[2] },
+        ],
+        [theme.colors.surface, theme.spacing],
+      )}
     >
       <SkeletonPlaceholder
         borderRadius={4}
         backgroundColor={theme.colors.onSurfaceDisabled}
       >
-        <View style={{ height: scaleByWidth(50) }} />
+        <View
+          style={useStyle(() => ({ height: scaleByWidth(60) }), [scaleByWidth])}
+        />
       </SkeletonPlaceholder>
       <SkeletonPlaceholder
         borderRadius={4}
@@ -65,7 +73,7 @@ export const GameCardSkeleton = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    flex: 1,
     borderRadius: 8,
   },
 });

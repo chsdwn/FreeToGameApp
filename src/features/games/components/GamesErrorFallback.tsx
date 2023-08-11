@@ -4,7 +4,7 @@ import { isAxiosError } from 'axios';
 import { Button, Surface, Text } from 'react-native-paper';
 
 import { Icon } from '@/components';
-import { useScale, useTheme } from '@/hooks';
+import { useScale, useStyle, useTheme } from '@/hooks';
 
 import type { FallbackComponentProps } from 'react-native-error-boundary';
 
@@ -32,7 +32,10 @@ export const GamesErrorFallback = ({
     <SafeAreaView style={styles.root}>
       <Surface
         mode="flat"
-        style={[styles.container, { margin: theme.spacing[3] }]}
+        style={useStyle(
+          () => [styles.container, { margin: theme.spacing[3] }],
+          [theme.spacing],
+        )}
       >
         <Icon
           name="alert-circle-outline"
@@ -45,7 +48,10 @@ export const GamesErrorFallback = ({
         <Button
           onPress={resetError}
           mode="outlined"
-          style={{ marginTop: theme.spacing[4] }}
+          style={useStyle(
+            () => ({ marginTop: theme.spacing[4] }),
+            [theme.spacing],
+          )}
         >
           Try Again
         </Button>

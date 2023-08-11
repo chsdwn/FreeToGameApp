@@ -1,19 +1,20 @@
 import React from 'react';
-import { ScrollView, useWindowDimensions, View } from 'react-native';
+import { useWindowDimensions } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 
 import { BREAKPOINTS } from '@/config';
-import { useDebounce, useTheme } from '@/hooks';
+import { useDebounce, useStyle, useTheme } from '@/hooks';
 import { GameCard } from './GameCard';
 import { GameCardSkeleton } from './GameCardSkeleton';
 import { GamesListEmpty } from './GamesListEmpty';
 import { useGames } from '../api';
 import { useGamesFilterStore } from '../store';
 
-const Seperator = () => {
-  const theme = useTheme();
-
-  return <View style={{ height: theme.spacing[4] }} />;
+const generateSkeletonDataArrayOfSize = (size: number) => {
+  return Array.from(Array(size).keys()).map((id) => ({
+    id,
+    Skeleton: GameCardSkeleton,
+  }));
 };
 
 export const GamesList = () => {
@@ -25,6 +26,11 @@ export const GamesList = () => {
   const debouncedIsFetching = useDebounce(gamesQuery.isFetching, 500);
   const debouncedIsLoading = useDebounce(gamesQuery.isLoading, 500);
 
+  const listContentStyle = useStyle(
+    () => ({ padding: theme.spacing[2] }),
+    [theme.spacing],
+  );
+
   const handleRefresh = () => {
     gamesQuery.refetch();
   };
@@ -35,18 +41,14 @@ export const GamesList = () => {
 
   if (gamesQuery.isLoading || debouncedIsLoading) {
     return (
-      <ScrollView
-        contentContainerStyle={{ padding: theme.spacing[4] }}
-        showsVerticalScrollIndicator={false}
-      >
-        <GameCardSkeleton />
-        <Seperator />
-        <GameCardSkeleton />
-        <Seperator />
-        <GameCardSkeleton />
-        <Seperator />
-        <GameCardSkeleton />
-      </ScrollView>
+      <FlashList
+        data={generateSkeletonDataArrayOfSize(numColumns * 4)}
+        keyExtractor={(item) => `game-skeleton-${item.id}`}
+        renderItem={({ item: { Skeleton } }) => <Skeleton />}
+        contentContainerStyle={listContentStyle}
+        numColumns={numColumns}
+        estimatedItemSize={250}
+      />
     );
   }
 
@@ -55,7 +57,7 @@ export const GamesList = () => {
       data={gamesQuery.data}
       keyExtractor={(item) => `game-${item.id}`}
       renderItem={({ item }) => <GameCard game={item} />}
-      contentContainerStyle={{ padding: theme.spacing[2] }}
+      contentContainerStyle={listContentStyle}
       ListEmptyComponent={<GamesListEmpty />}
       refreshing={gamesQuery.isFetching || debouncedIsFetching}
       onRefresh={handleRefresh}

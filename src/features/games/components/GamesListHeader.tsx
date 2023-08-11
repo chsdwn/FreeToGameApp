@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { Badge, IconButton, Surface, Text } from 'react-native-paper';
 
-import { useScale, useTheme } from '@/hooks';
+import { useScale, useStyle, useTheme } from '@/hooks';
 import { HomeStackNavigationProp } from '@/types';
 import { useGamesFilterStore } from '../store';
 
@@ -25,7 +25,10 @@ export const GamesListHeader = () => {
   return (
     <Surface
       elevation={3}
-      style={[styles.header, { backgroundColor: theme.colors.surface }]}
+      style={useStyle(
+        () => [styles.header, { backgroundColor: theme.colors.surface }],
+        [theme.colors.surface],
+      )}
     >
       <View style={styles.placeholder} />
       <Text variant="headlineMedium" style={styles.title}>
