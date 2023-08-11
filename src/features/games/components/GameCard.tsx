@@ -5,13 +5,10 @@ import { Image } from 'expo-image';
 
 import { Icon } from '@/components';
 import { roundness } from '@/config/theme';
-import { useScale, useTheme } from '@/hooks';
-import type { IGame } from '../types';
+import { useScale, useStyle, useTheme } from '@/hooks';
+import { IGame } from '../types';
 
-const imagePlaceholder =
-  '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[f' +
-  'QayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ay' +
-  'ayj[ayfjj[j[ayjuayj[';
+const imagePlaceholder = require('../../../../assets/images/placeholder.png');
 
 type IProps = {
   game: IGame;
@@ -23,56 +20,89 @@ export const GameCard = React.memo(({ game }: IProps) => {
   return (
     <Card
       elevation={3}
-      style={[
-        styles.card,
-        {
-          backgroundColor: theme.colors.surface,
-          margin: theme.spacing[2],
-        },
-      ]}
+      style={useStyle(
+        () => [
+          styles.card,
+          {
+            backgroundColor: theme.colors.surface,
+            margin: theme.spacing[2],
+          },
+        ],
+        [theme.colors.surface, theme.spacing],
+      )}
     >
       <Image
         source={game.thumbnail}
         style={styles.img}
         contentFit="contain"
         placeholder={imagePlaceholder}
+        placeholderContentFit="cover"
         recyclingKey={`game-thumbnail-${game.id}`}
       />
-      <View style={{ marginHorizontal: theme.spacing[2] }}>
+      <View
+        style={useStyle(
+          () => ({ marginHorizontal: theme.spacing[2] }),
+          [theme.spacing],
+        )}
+      >
         <Text
           variant="titleLarge"
-          style={[styles.title, { paddingVertical: theme.spacing[2] }]}
+          style={useStyle(
+            () => [styles.title, { paddingVertical: theme.spacing[2] }],
+            [theme.spacing],
+          )}
         >
           {game.title}
         </Text>
         <View
-          style={[
-            styles.platformGenreContainer,
-            {
-              marginBottom: theme.spacing[3],
-              marginHorizontal: theme.spacing[4],
-            },
-          ]}
+          style={useStyle(
+            () => [
+              styles.platformGenreContainer,
+              {
+                marginBottom: theme.spacing[3],
+                marginHorizontal: theme.spacing[4],
+              },
+            ],
+            [theme.spacing],
+          )}
         >
           <View
-            style={[styles.iconLabelContainer, { marginTop: theme.spacing[1] }]}
+            style={useStyle(
+              () => [
+                styles.iconLabelContainer,
+                { marginTop: theme.spacing[1] },
+              ],
+              [theme.spacing],
+            )}
           >
             <Icon
               name="layers-triple"
               size={scaleByWidth(6.5)}
               color={theme.colors.tertiary}
-              style={{ marginRight: theme.spacing[2] }}
+              style={useStyle(
+                () => ({ marginRight: theme.spacing[2] }),
+                [theme.spacing],
+              )}
             />
             <Text variant="labelLarge">{game.platform}</Text>
           </View>
           <View
-            style={[styles.iconLabelContainer, { marginTop: theme.spacing[1] }]}
+            style={useStyle(
+              () => [
+                styles.iconLabelContainer,
+                { marginTop: theme.spacing[1] },
+              ],
+              [theme.spacing],
+            )}
           >
             <Icon
               name="shape"
               size={scaleByWidth(6.5)}
               color={theme.colors.tertiary}
-              style={{ marginRight: theme.spacing[2] }}
+              style={useStyle(
+                () => ({ marginRight: theme.spacing[2] }),
+                [theme.spacing],
+              )}
             />
             <Text variant="labelLarge">{game.genre}</Text>
           </View>
@@ -100,5 +130,6 @@ const styles = StyleSheet.create({
   },
   iconLabelContainer: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
 });
