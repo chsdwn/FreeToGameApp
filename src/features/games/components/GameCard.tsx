@@ -3,10 +3,10 @@ import { StyleSheet, View } from 'react-native';
 import { Card, Text } from 'react-native-paper';
 import { Image } from 'expo-image';
 
-import { Icon } from '@/components';
 import { roundness } from '@/config/theme';
-import { useScale, useStyle, useTheme } from '@/hooks';
+import { useStyle, useTheme } from '@/hooks';
 import { IGame } from '../types';
+import { GameCardLabel } from './GameCardLabel';
 
 const imagePlaceholder = require('../../../../assets/images/placeholder.png');
 
@@ -15,7 +15,6 @@ type IProps = {
 };
 export const GameCard = React.memo(({ game }: IProps) => {
   const theme = useTheme();
-  const { scaleByWidth } = useScale();
 
   return (
     <Card
@@ -66,46 +65,8 @@ export const GameCard = React.memo(({ game }: IProps) => {
             [theme.spacing],
           )}
         >
-          <View
-            style={useStyle(
-              () => [
-                styles.iconLabelContainer,
-                { marginTop: theme.spacing[1] },
-              ],
-              [theme.spacing],
-            )}
-          >
-            <Icon
-              name="layers-triple"
-              size={scaleByWidth(6.5)}
-              color={theme.colors.tertiary}
-              style={useStyle(
-                () => ({ marginRight: theme.spacing[2] }),
-                [theme.spacing],
-              )}
-            />
-            <Text variant="labelLarge">{game.platform}</Text>
-          </View>
-          <View
-            style={useStyle(
-              () => [
-                styles.iconLabelContainer,
-                { marginTop: theme.spacing[1] },
-              ],
-              [theme.spacing],
-            )}
-          >
-            <Icon
-              name="shape"
-              size={scaleByWidth(6.5)}
-              color={theme.colors.tertiary}
-              style={useStyle(
-                () => ({ marginRight: theme.spacing[2] }),
-                [theme.spacing],
-              )}
-            />
-            <Text variant="labelLarge">{game.genre}</Text>
-          </View>
+          <GameCardLabel label={game.platform} icon="layers-triple" />
+          <GameCardLabel label={game.genre} icon="shape" />
         </View>
       </View>
     </Card>
@@ -127,9 +88,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-  },
-  iconLabelContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
   },
 });
