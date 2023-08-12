@@ -2,7 +2,7 @@
  * @format
  */
 
-import './src/wdyr';
+import './src/lib/wdyr';
 
 import { AppRegistry } from 'react-native';
 import { App } from './src/App';
