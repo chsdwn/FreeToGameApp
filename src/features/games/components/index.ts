@@ -1,7 +1,9 @@
 export { GameCard } from './GameCard';
+export { GameCardLabel } from './GameCardLabel';
 export { GameCardSkeleton } from './GameCardSkeleton';
 export { GamesErrorFallback } from './GamesErrorFallback';
 export { GamesFilterChip } from './GamesFilterChip';
+export { GamesFilterOptions } from './GamesFilterOptions';
 export { GamesList } from './GamesList';
 export { GamesListEmpty } from './GamesListEmpty';
 export { GamesListHeader } from './GamesListHeader';
