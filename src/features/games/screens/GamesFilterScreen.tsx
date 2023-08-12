@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
-import { Button, Surface, Text } from 'react-native-paper';
+import { Button, Surface } from 'react-native-paper';
 
-import { Icon } from '@/components';
-import { useScale, useStyle, useTheme } from '@/hooks';
-import { GamesFilterChip } from '../components';
+import { useStyle, useTheme } from '@/hooks';
+import { GamesFilterOptions } from '../components';
 import { categoryItems, platformItems, sortByItems } from '../config';
 import { useGamesFilterStore } from '../store';
 import { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
 
 export const GamesFilterScreen = () => {
   const theme = useTheme();
-  const { scaleByWidth } = useScale();
   const navigation = useNavigation();
   const gamesFilterStore = useGamesFilterStore();
 
@@ -59,113 +57,27 @@ export const GamesFilterScreen = () => {
         )}
       >
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View
-            style={useStyle(
-              () => [styles.titleContainer, { marginTop: theme.spacing[3] }],
-              [theme.spacing],
-            )}
-          >
-            <Icon
-              name="layers-triple"
-              size={scaleByWidth(6.5)}
-              color={theme.colors.tertiary}
-              style={useStyle(
-                () => ({ marginRight: theme.spacing[1] }),
-                [theme.spacing],
-              )}
-            />
-            <Text variant="labelLarge">Platform:</Text>
-          </View>
-          <View
-            style={useStyle(
-              () => [
-                styles.filterBtnContainer,
-                { marginTop: theme.spacing[2] },
-              ],
-              [theme.spacing],
-            )}
-          >
-            {platformItems.map(({ label, value }) => (
-              <GamesFilterChip
-                key={`platformItem-${value}`}
-                label={label}
-                active={platform === value}
-                onPress={() => handlePlatformChange(value)}
-              />
-            ))}
-          </View>
-
-          <View
-            style={useStyle(
-              () => [styles.titleContainer, { marginTop: theme.spacing[3] }],
-              [theme.spacing],
-            )}
-          >
-            <Icon
-              name="shape"
-              size={scaleByWidth(6.5)}
-              color={theme.colors.tertiary}
-              style={useStyle(
-                () => ({ marginRight: theme.spacing[1] }),
-                [theme.spacing],
-              )}
-            />
-            <Text variant="labelLarge">Category:</Text>
-          </View>
-          <View
-            style={useStyle(
-              () => [
-                styles.filterBtnContainer,
-                { marginTop: theme.spacing[2] },
-              ],
-              [theme.spacing],
-            )}
-          >
-            {categoryItems.map(({ label, value }) => (
-              <GamesFilterChip
-                key={`categoryItem-${value}`}
-                label={label}
-                active={category === value}
-                onPress={() => handleCategoryChange(value)}
-              />
-            ))}
-          </View>
-
-          <View
-            style={useStyle(
-              () => [styles.titleContainer, { marginTop: theme.spacing[3] }],
-              [theme.spacing],
-            )}
-          >
-            <Icon
-              name="sort"
-              size={scaleByWidth(6.5)}
-              color={theme.colors.tertiary}
-              style={useStyle(
-                () => ({ marginRight: theme.spacing[1] }),
-                [theme.spacing],
-              )}
-            />
-            <Text variant="labelLarge">Sort by:</Text>
-          </View>
-          <View
-            style={useStyle(
-              () => [
-                styles.filterBtnContainer,
-                { marginTop: theme.spacing[2] },
-              ],
-              [theme.spacing],
-            )}
-          >
-            {sortByItems.map(({ label, value }) => (
-              <GamesFilterChip
-                key={`sortByItem-${value}`}
-                label={label}
-                active={sortBy === value}
-                onPress={() => handleSortByChange(value)}
-              />
-            ))}
-          </View>
+          <GamesFilterOptions
+            title="Platform:"
+            icon="layers-triple"
+            activeOption={platform}
+            optionItems={platformItems}
+            onOptionChange={handlePlatformChange}
+          />
+          <GamesFilterOptions
+            title="Category:"
+            icon="shape"
+            activeOption={category}
+            optionItems={categoryItems}
+            onOptionChange={handleCategoryChange}
+          />
+          <GamesFilterOptions
+            title="Sort by:"
+            icon="sort"
+            activeOption={sortBy}
+            optionItems={sortByItems}
+            onOptionChange={handleSortByChange}
+          />
         </ScrollView>
 
         <View
@@ -213,14 +125,6 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    alignContent: 'center',
-  },
-  filterBtnContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
   },
   actionButtonsContainer: {
     flexDirection: 'row',
