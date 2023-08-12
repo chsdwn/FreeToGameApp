@@ -1,4 +1,4 @@
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export type HomeStackParamList = {
   Games: undefined;
