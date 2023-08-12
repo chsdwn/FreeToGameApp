@@ -58,7 +58,7 @@ export const GamesList = () => {
       keyExtractor={(item) => `game-${item.id}`}
       renderItem={({ item }) => <GameCard game={item} />}
       contentContainerStyle={listContentStyle}
-      ListEmptyComponent={<GamesListEmpty />}
+      ListEmptyComponent={GamesListEmpty}
       refreshing={gamesQuery.isFetching || debouncedIsFetching}
       onRefresh={handleRefresh}
       estimatedItemSize={325}
