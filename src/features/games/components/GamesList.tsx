@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 
@@ -39,10 +39,15 @@ export const GamesList = () => {
   if (width >= BREAKPOINTS.sm) numColumns = 2;
   if (width >= BREAKPOINTS.md) numColumns = 3;
 
+  const skeletonData = useMemo(
+    () => generateSkeletonDataArrayOfSize(numColumns * 4),
+    [numColumns],
+  );
+
   if (gamesQuery.isLoading || debouncedIsLoading) {
     return (
       <FlashList
-        data={generateSkeletonDataArrayOfSize(numColumns * 4)}
+        data={skeletonData}
         keyExtractor={(item) => `game-skeleton-${item.id}`}
         renderItem={({ item: { Skeleton } }) => <Skeleton />}
         contentContainerStyle={listContentStyle}
