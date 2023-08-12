@@ -1,8 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
 import { axios } from '@/lib';
-
-import type { IGame } from '../types';
+import { IGame } from '../types';
 
 type IFilter = {
   platform: string | null;

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import type { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
+import { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
 
 type Platform = IGamePlatform | null;
 type Category = IGameCategory | null;

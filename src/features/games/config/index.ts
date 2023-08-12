@@ -1,4 +1,4 @@
-import type { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
+import { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
 
 type IPlatformItems = { label: string; value: IGamePlatform }[];
 export const platformItems: IPlatformItems = [

@@ -2,11 +2,10 @@ import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { isAxiosError } from 'axios';
 import { Button, Surface, Text } from 'react-native-paper';
+import { FallbackComponentProps } from 'react-native-error-boundary';
 
 import { Icon } from '@/components';
 import { useScale, useStyle, useTheme } from '@/hooks';
-
-import type { FallbackComponentProps } from 'react-native-error-boundary';
 
 export const GamesErrorFallback = ({
   error,
