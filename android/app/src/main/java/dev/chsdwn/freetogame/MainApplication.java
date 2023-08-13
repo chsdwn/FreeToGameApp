@@ -1,4 +1,4 @@
-package com.famobicase;
+package dev.chsdwn.freetogame;
 
 import android.app.Application;
 import android.content.res.Configuration;

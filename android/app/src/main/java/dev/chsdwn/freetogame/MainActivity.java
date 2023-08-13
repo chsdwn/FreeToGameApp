@@ -1,4 +1,4 @@
-package com.famobicase;
+package dev.chsdwn.freetogame;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
@@ -15,7 +15,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "FamobiCase";
+    return "Free To Game";
   }
 
   /**

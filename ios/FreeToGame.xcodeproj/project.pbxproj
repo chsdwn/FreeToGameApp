@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* FamobiCaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FamobiCaseTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-FamobiCase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-FamobiCase.a */; };
+		00E356F31AD99517003FC87E /* FreeToGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FreeToGameTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-FreeToGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-FreeToGame.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		194884CB1A9E4D9C9BC045A6 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1E8783A5CA44D4BE5392B2 /* Roboto-Regular.ttf */; };
 		508E86FF2A548075006874F1 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 508E86EF2A548075006874F1 /* MaterialCommunityIcons.ttf */; };
 		62AE035A540BCFFCE382DDE0 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D335EBAA6517BC12962A59 /* ExpoModulesProvider.swift */; };
-		7699B88040F8A987B510C191 /* libPods-FamobiCase-FamobiCaseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-FamobiCase-FamobiCaseTests.a */; };
+		7699B88040F8A987B510C191 /* libPods-FreeToGame-FreeToGameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-FreeToGame-FreeToGameTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		BA58579EBFFA4C9C9AEEC96D /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B581F0554A274409AEF93F0E /* RobotoSlab-Medium.ttf */; };
 		FDF06C43AD5B83C5D4E7B695 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBD865FDA528C313F0D7BA /* ExpoModulesProvider.swift */; };
@@ -27,30 +27,30 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = FamobiCase;
+			remoteInfo = FreeToGame;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* FamobiCaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FamobiCaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* FreeToGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeToGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* FamobiCaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FamobiCaseTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* FamobiCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamobiCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FamobiCase/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = FamobiCase/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FamobiCase/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FamobiCase/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FamobiCase/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-FamobiCase-FamobiCaseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FamobiCase-FamobiCaseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		27D335EBAA6517BC12962A59 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-FamobiCase/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-FamobiCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamobiCase.debug.xcconfig"; path = "Target Support Files/Pods-FamobiCase/Pods-FamobiCase.debug.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* FreeToGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeToGameTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* FreeToGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeToGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FreeToGame/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = FreeToGame/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FreeToGame/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FreeToGame/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FreeToGame/main.m; sourceTree = "<group>"; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-FreeToGame-FreeToGameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreeToGame-FreeToGameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D335EBAA6517BC12962A59 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-FreeToGame/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		3B4392A12AC88292D35C810B /* Pods-FreeToGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeToGame.debug.xcconfig"; path = "Target Support Files/Pods-FreeToGame/Pods-FreeToGame.debug.xcconfig"; sourceTree = "<group>"; };
 		508E86EF2A548075006874F1 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-FamobiCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamobiCase.release.xcconfig"; path = "Target Support Files/Pods-FamobiCase/Pods-FamobiCase.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-FamobiCase-FamobiCaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamobiCase-FamobiCaseTests.debug.xcconfig"; path = "Target Support Files/Pods-FamobiCase-FamobiCaseTests/Pods-FamobiCase-FamobiCaseTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-FamobiCase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FamobiCase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FamobiCase/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-FamobiCase-FamobiCaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FamobiCase-FamobiCaseTests.release.xcconfig"; path = "Target Support Files/Pods-FamobiCase-FamobiCaseTests/Pods-FamobiCase-FamobiCaseTests.release.xcconfig"; sourceTree = "<group>"; };
-		8ECBD865FDA528C313F0D7BA /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-FamobiCase-FamobiCaseTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-FreeToGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeToGame.release.xcconfig"; path = "Target Support Files/Pods-FreeToGame/Pods-FreeToGame.release.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-FreeToGame-FreeToGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeToGame-FreeToGameTests.debug.xcconfig"; path = "Target Support Files/Pods-FreeToGame-FreeToGameTests/Pods-FreeToGame-FreeToGameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-FreeToGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreeToGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FreeToGame/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-FreeToGame-FreeToGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeToGame-FreeToGameTests.release.xcconfig"; path = "Target Support Files/Pods-FreeToGame-FreeToGameTests/Pods-FreeToGame-FreeToGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		8ECBD865FDA528C313F0D7BA /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-FreeToGame-FreeToGameTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		B581F0554A274409AEF93F0E /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Medium.ttf"; path = "../assets/fonts/RobotoSlab-Medium.ttf"; sourceTree = "<group>"; };
 		DC1E8783A5CA44D4BE5392B2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-FamobiCase-FamobiCaseTests.a in Frameworks */,
+				7699B88040F8A987B510C191 /* libPods-FreeToGame-FreeToGameTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,20 +69,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-FamobiCase.a in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* libPods-FreeToGame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* FamobiCaseTests */ = {
+		00E356EF1AD99517003FC87E /* FreeToGameTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* FamobiCaseTests.m */,
+				00E356F21AD99517003FC87E /* FreeToGameTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = FamobiCaseTests;
+			path = FreeToGameTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -93,7 +93,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* FamobiCase */ = {
+		13B07FAE1A68108700A75B9A /* FreeToGame */ = {
 			isa = PBXGroup;
 			children = (
 				508E86E92A548075006874F1 /* Fonts */,
@@ -104,15 +104,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = FamobiCase;
+			name = FreeToGame;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-FamobiCase.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-FamobiCase-FamobiCaseTests.a */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-FreeToGame.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-FreeToGame-FreeToGameTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,20 +126,20 @@
 			path = "../node_modules/react-native-vector-icons/Fonts";
 			sourceTree = "<group>";
 		};
-		55A9385476F79E59098096ED /* FamobiCaseTests */ = {
+		55A9385476F79E59098096ED /* FreeToGameTests */ = {
 			isa = PBXGroup;
 			children = (
 				8ECBD865FDA528C313F0D7BA /* ExpoModulesProvider.swift */,
 			);
-			name = FamobiCaseTests;
+			name = FreeToGameTests;
 			sourceTree = "<group>";
 		};
-		5F95DB4F3CF55D9AD0B1CF19 /* FamobiCase */ = {
+		5F95DB4F3CF55D9AD0B1CF19 /* FreeToGame */ = {
 			isa = PBXGroup;
 			children = (
 				27D335EBAA6517BC12962A59 /* ExpoModulesProvider.swift */,
 			);
-			name = FamobiCase;
+			name = FreeToGame;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -152,9 +152,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* FamobiCase */,
+				13B07FAE1A68108700A75B9A /* FreeToGame */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* FamobiCaseTests */,
+				00E356EF1AD99517003FC87E /* FreeToGameTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -169,8 +169,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* FamobiCase.app */,
-				00E356EE1AD99517003FC87E /* FamobiCaseTests.xctest */,
+				13B07F961A680F5B00A75B9A /* FreeToGame.app */,
+				00E356EE1AD99517003FC87E /* FreeToGameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,10 +178,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-FamobiCase.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-FamobiCase.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-FamobiCase-FamobiCaseTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-FamobiCase-FamobiCaseTests.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-FreeToGame.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-FreeToGame.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-FreeToGame-FreeToGameTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-FreeToGame-FreeToGameTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -189,8 +189,8 @@
 		E05AECD16A568DA8503C15A9 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				5F95DB4F3CF55D9AD0B1CF19 /* FamobiCase */,
-				55A9385476F79E59098096ED /* FamobiCaseTests */,
+				5F95DB4F3CF55D9AD0B1CF19 /* FreeToGame */,
+				55A9385476F79E59098096ED /* FreeToGameTests */,
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
@@ -207,9 +207,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* FamobiCaseTests */ = {
+		00E356ED1AD99517003FC87E /* FreeToGameTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FamobiCaseTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FreeToGameTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				FBD03C9297003274E7423D85 /* [Expo] Configure project */,
@@ -224,14 +224,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = FamobiCaseTests;
-			productName = FamobiCaseTests;
-			productReference = 00E356EE1AD99517003FC87E /* FamobiCaseTests.xctest */;
+			name = FreeToGameTests;
+			productName = FreeToGameTests;
+			productReference = 00E356EE1AD99517003FC87E /* FreeToGameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* FamobiCase */ = {
+		13B07F861A680F5B00A75B9A /* FreeToGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FamobiCase" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FreeToGame" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -247,9 +247,9 @@
 			);
 			dependencies = (
 			);
-			name = FamobiCase;
-			productName = FamobiCase;
-			productReference = 13B07F961A680F5B00A75B9A /* FamobiCase.app */;
+			name = FreeToGame;
+			productName = FreeToGame;
+			productReference = 13B07F961A680F5B00A75B9A /* FreeToGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -269,7 +269,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FamobiCase" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FreeToGame" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -282,8 +282,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* FamobiCase */,
-				00E356ED1AD99517003FC87E /* FamobiCaseTests */,
+				13B07F861A680F5B00A75B9A /* FreeToGame */,
+				00E356ED1AD99517003FC87E /* FreeToGameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -333,15 +333,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FamobiCase/Pods-FamobiCase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FreeToGame/Pods-FreeToGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FamobiCase/Pods-FamobiCase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FreeToGame/Pods-FreeToGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FamobiCase/Pods-FamobiCase-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FreeToGame/Pods-FreeToGame-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6187F68491DCB88E4D49511D /* [Expo] Configure project */ = {
@@ -361,7 +361,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-FamobiCase/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-FreeToGame/expo-configure-project.sh\"\n";
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -378,7 +378,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FamobiCase-FamobiCaseTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FreeToGame-FreeToGameTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -400,7 +400,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FamobiCase-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FreeToGame-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -413,15 +413,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FamobiCase-FamobiCaseTests/Pods-FamobiCase-FamobiCaseTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FreeToGame-FreeToGameTests/Pods-FreeToGame-FreeToGameTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FamobiCase-FamobiCaseTests/Pods-FamobiCase-FamobiCaseTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FreeToGame-FreeToGameTests/Pods-FreeToGame-FreeToGameTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FamobiCase-FamobiCaseTests/Pods-FamobiCase-FamobiCaseTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FreeToGame-FreeToGameTests/Pods-FreeToGame-FreeToGameTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -430,15 +430,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FamobiCase/Pods-FamobiCase-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FreeToGame/Pods-FreeToGame-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FamobiCase/Pods-FamobiCase-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FreeToGame/Pods-FreeToGame-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FamobiCase/Pods-FamobiCase-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FreeToGame/Pods-FreeToGame-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -447,15 +447,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FamobiCase-FamobiCaseTests/Pods-FamobiCase-FamobiCaseTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FreeToGame-FreeToGameTests/Pods-FreeToGame-FreeToGameTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FamobiCase-FamobiCaseTests/Pods-FamobiCase-FamobiCaseTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FreeToGame-FreeToGameTests/Pods-FreeToGame-FreeToGameTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FamobiCase-FamobiCaseTests/Pods-FamobiCase-FamobiCaseTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FreeToGame-FreeToGameTests/Pods-FreeToGame-FreeToGameTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBD03C9297003274E7423D85 /* [Expo] Configure project */ = {
@@ -475,7 +475,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-FamobiCase-FamobiCaseTests/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-FreeToGame-FreeToGameTests/expo-configure-project.sh\"\n";
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -503,7 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* FamobiCaseTests.m in Sources */,
+				00E356F31AD99517003FC87E /* FreeToGameTests.m in Sources */,
 				FDF06C43AD5B83C5D4E7B695 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,7 +523,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* FamobiCase */;
+			target = 13B07F861A680F5B00A75B9A /* FreeToGame */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -531,14 +531,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-FamobiCase-FamobiCaseTests.debug.xcconfig */;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-FreeToGame-FreeToGameTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = FamobiCaseTests/Info.plist;
+				INFOPLIST_FILE = FreeToGameTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -551,19 +551,19 @@
 					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.chsdwn.freetogame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FamobiCase.app/FamobiCase";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FreeToGame.app/FreeToGame";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-FamobiCase-FamobiCaseTests.release.xcconfig */;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-FreeToGame-FreeToGameTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = FamobiCaseTests/Info.plist;
+				INFOPLIST_FILE = FreeToGameTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -576,21 +576,22 @@
 					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.chsdwn.freetogame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FamobiCase.app/FamobiCase";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FreeToGame.app/FreeToGame";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-FamobiCase.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-FreeToGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = FamobiCase/Info.plist;
+				INFOPLIST_FILE = FreeToGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Free To Game";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,8 +603,8 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = FamobiCase;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.chsdwn.freetogame;
+				PRODUCT_NAME = FreeToGame;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -616,12 +617,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-FamobiCase.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-FreeToGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = FamobiCase/Info.plist;
+				INFOPLIST_FILE = FreeToGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Free To Game";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,8 +635,8 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = FamobiCase;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.chsdwn.freetogame;
+				PRODUCT_NAME = FreeToGame;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -786,7 +788,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FamobiCaseTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FreeToGameTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -795,7 +797,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FamobiCase" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FreeToGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -804,7 +806,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FamobiCase" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "FreeToGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
