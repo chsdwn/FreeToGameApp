@@ -4,12 +4,12 @@ import { Chip as PaperChip, Text } from 'react-native-paper';
 
 import { useStyle, useTheme } from '@/hooks';
 
-type IProps = {
+export type ChipProps = {
   label: string;
   active?: boolean;
   onPress?: () => void;
 };
-export const Chip = ({ label, active = false, onPress }: IProps) => {
+export const Chip = ({ label, active = false, onPress }: ChipProps) => {
   const theme = useTheme();
 
   return (
