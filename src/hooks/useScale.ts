@@ -1,43 +1,7 @@
-import React, { createContext, useCallback, useContext, useMemo } from 'react';
+import { useCallback, useContext, useMemo } from 'react';
 import { PixelRatio, useWindowDimensions } from 'react-native';
 
-const BASE_WIDTH = 360;
-const BASE_HEIGHT = 800;
-
-export type IResponsiveConfig = {
-  baseWidth: number;
-  baseHeight: number;
-  breakpoints?: {
-    sm?: number;
-    md?: number;
-    lg?: number;
-    xl?: number;
-  };
-};
-export const ResponsiveContext = createContext<IResponsiveConfig>({
-  baseWidth: BASE_WIDTH,
-  baseHeight: BASE_HEIGHT,
-});
-
-type IProviderProps = {
-  config?: Partial<IResponsiveConfig>;
-  children: React.ReactNode;
-};
-export const ResponsiveProvider = ({ config, children }: IProviderProps) => {
-  const memoizedConfig: IResponsiveConfig = useMemo(() => {
-    return {
-      baseWidth: config?.baseWidth || BASE_WIDTH,
-      baseHeight: config?.baseHeight || BASE_HEIGHT,
-      breakpoints: config?.breakpoints,
-    };
-  }, [config]);
-
-  return (
-    <ResponsiveContext.Provider value={memoizedConfig}>
-      {children}
-    </ResponsiveContext.Provider>
-  );
-};
+import { ResponsiveContext } from '@/store';
 
 export const useScale = () => {
   const { baseWidth, breakpoints } = useContext(ResponsiveContext);

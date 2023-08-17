@@ -3,7 +3,7 @@ import { useWindowDimensions } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 
 import { useDebounce, useStyle, useTheme } from '@/hooks';
-import { ResponsiveContext } from '@/hooks/useScale';
+import { ResponsiveContext } from '@/store';
 import { GameCard } from './GameCard';
 import { GameCardSkeleton } from './GameCardSkeleton';
 import { GamesListEmpty } from './GamesListEmpty';

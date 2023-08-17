@@ -10,9 +10,10 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { PaperProvider } from 'react-native-paper';
 
 import { useTheme } from './hooks';
-import { IResponsiveConfig, ResponsiveProvider } from './hooks/useScale';
 import { queryClient } from './lib';
 import { HomeRoute } from './routes';
+import { ResponsiveProvider } from './store';
+import { IResponsiveConfig } from './types';
 
 const config: IResponsiveConfig = {
   baseWidth: 360,
