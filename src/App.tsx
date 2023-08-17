@@ -10,8 +10,19 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { PaperProvider } from 'react-native-paper';
 
 import { useTheme } from './hooks';
+import { IResponsiveConfig, ResponsiveProvider } from './hooks/useScale';
 import { queryClient } from './lib';
 import { HomeRoute } from './routes';
+
+const config: IResponsiveConfig = {
+  baseWidth: 360,
+  baseHeight: 800,
+  breakpoints: {
+    sm: 640,
+    md: 960,
+    lg: 1280,
+  },
+};
 
 export const App = () => {
   const colorScheme = useColorScheme();
@@ -22,15 +33,17 @@ export const App = () => {
   return (
     <NavigationContainer>
       <QueryClientProvider client={queryClient}>
-        <PaperProvider theme={theme}>
-          <StatusBar
-            backgroundColor={isDark ? 'black' : 'white'}
-            barStyle={isDark ? 'light-content' : 'dark-content'}
-          />
-          <SafeAreaView style={styles.root}>
-            <HomeRoute />
-          </SafeAreaView>
-        </PaperProvider>
+        <ResponsiveProvider config={config}>
+          <PaperProvider theme={theme}>
+            <StatusBar
+              backgroundColor={isDark ? 'black' : 'white'}
+              barStyle={isDark ? 'light-content' : 'dark-content'}
+            />
+            <SafeAreaView style={styles.root}>
+              <HomeRoute />
+            </SafeAreaView>
+          </PaperProvider>
+        </ResponsiveProvider>
       </QueryClientProvider>
     </NavigationContainer>
   );
