@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 
-import { BREAKPOINTS } from '@/config';
 import { useDebounce, useStyle, useTheme } from '@/hooks';
+import { ResponsiveContext } from '@/hooks/useScale';
 import { GameCard } from './GameCard';
 import { GameCardSkeleton } from './GameCardSkeleton';
 import { GamesListEmpty } from './GamesListEmpty';
@@ -20,6 +20,7 @@ const generateSkeletonDataArrayOfSize = (size: number) => {
 export const GamesList = () => {
   const theme = useTheme();
   const { width } = useWindowDimensions();
+  const { breakpoints } = useContext(ResponsiveContext);
   const { platform, category, sortBy } = useGamesFilterStore();
   const gamesQuery = useGames({ platform, category, sortBy });
 
@@ -36,8 +37,9 @@ export const GamesList = () => {
   };
 
   let numColumns = 1;
-  if (width >= BREAKPOINTS.sm) numColumns = 2;
-  if (width >= BREAKPOINTS.md) numColumns = 3;
+  if (breakpoints?.sm && width >= breakpoints.sm) numColumns = 2;
+  if (breakpoints?.md && width >= breakpoints.md) numColumns = 3;
+  if (breakpoints?.lg && width >= breakpoints.lg) numColumns = 4;
 
   const skeletonData = useMemo(
     () => generateSkeletonDataArrayOfSize(numColumns * 4),
