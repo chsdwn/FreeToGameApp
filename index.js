@@ -9,7 +9,7 @@ import { name as appName } from './app.json';
 let AppEntryPoint = App;
 
 if (Constants.expoConfig.extra.storybookEnabled === 'true') {
-  AppEntryPoint = require('./.storybook').default;
+  AppEntryPoint = require('./.storybook/Storybook').StorybookUIRoot;
 }
 
 AppRegistry.registerComponent(appName, () => AppEntryPoint);

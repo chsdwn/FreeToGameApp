@@ -15,7 +15,7 @@ const IconMeta: Meta<IconProps> = {
   args: {
     name: 'home',
     size: 32,
-    color: 'red',
+    color: 'gray',
   },
   decorators: [
     (Story) => {
