@@ -29,7 +29,9 @@ export const GameCardLabel = ({ label, icon }: IProps) => {
           [theme.spacing],
         )}
       />
-      <Text variant="labelLarge">{label}</Text>
+      <Text variant="labelLarge" numberOfLines={1}>
+        {label}
+      </Text>
     </View>
   );
 };
