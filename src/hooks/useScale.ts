@@ -4,8 +4,14 @@ import { PixelRatio, useWindowDimensions } from 'react-native';
 import { ResponsiveContext } from '@/store';
 
 export const useScale = () => {
-  const { baseWidth, breakpoints } = useContext(ResponsiveContext);
+  const { baseHeight, baseWidth, breakpoints } = useContext(ResponsiveContext);
   const { fontScale, height, scale, width } = useWindowDimensions();
+
+  const windowHeight = useMemo(() => {
+    const isPortrait = width < height;
+    const heightByRotation = isPortrait ? height : width;
+    return heightByRotation;
+  }, [height, width]);
 
   const windowWidth = useMemo(() => {
     const isPortrait = width < height;
@@ -18,6 +24,15 @@ export const useScale = () => {
     if (breakpoints?.xl && breakpoints.xl <= widthByRotation) divisor = 5;
     return widthByRotation / divisor;
   }, [breakpoints, height, width]);
+
+  const scaleByHeight = useCallback(
+    (size: number) => {
+      return PixelRatio.roundToNearestPixel(
+        size * (windowHeight / baseHeight) * scale,
+      );
+    },
+    [baseHeight, scale, windowHeight],
+  );
 
   const scaleByWidth = useCallback(
     (size: number) => {
@@ -37,5 +52,5 @@ export const useScale = () => {
     [baseWidth, fontScale, windowWidth],
   );
 
-  return { scaleByWidth, scaleFontSizeByWidth };
+  return { scaleByHeight, scaleByWidth, scaleFontSizeByWidth };
 };
