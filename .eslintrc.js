@@ -14,6 +14,11 @@ module.exports = {
         paths: [
           {
             name: 'react-native',
+            importNames: ['StatusBar'],
+            message: 'Import StatusBar from @/components',
+          },
+          {
+            name: 'react-native',
             importNames: ['Text'],
             message: 'Import Text from react-native-paper',
           },
