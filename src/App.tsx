@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-} from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { PaperProvider } from 'react-native-paper';
 
+import { StatusBar } from './components';
 import { useTheme } from './hooks';
 import { queryClient } from './lib';
 import { HomeRoute } from './routes';
@@ -26,20 +22,14 @@ const config: IResponsiveConfig = {
 };
 
 export const App = () => {
-  const colorScheme = useColorScheme();
   const theme = useTheme();
-
-  const isDark = colorScheme === 'dark';
 
   return (
     <NavigationContainer>
       <QueryClientProvider client={queryClient}>
         <ResponsiveProvider config={config}>
           <PaperProvider theme={theme}>
-            <StatusBar
-              backgroundColor={isDark ? 'black' : 'white'}
-              barStyle={isDark ? 'light-content' : 'dark-content'}
-            />
+            <StatusBar />
             <SafeAreaView style={styles.root}>
               <HomeRoute />
             </SafeAreaView>
