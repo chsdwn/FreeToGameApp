@@ -1,6 +1,5 @@
 export type IResponsiveConfig = {
   baseWidth: number;
-  baseHeight: number;
   breakpoints?: {
     sm?: number;
     md?: number;
