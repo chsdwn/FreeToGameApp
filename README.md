@@ -37,6 +37,7 @@
 ## About The Project
 
 ### Tech Stack
+
 | Library                   | Category         | Version | Description                                                                      |
 | ------------------------- | ---------------- | ------- | -------------------------------------------------------------------------------- |
 | React Native              | Mobile Framework | v0.72   | The best cross-platform mobile framework                                         |
@@ -52,17 +53,17 @@
 | Hermes                    | JS engine        |         | Fine-tuned JS engine for RN                                                      |
 | Jest                      | Test Runner      | v29     | Standard test runner for JS apps                                                 |
 
-
 <p align="right">(<a href="#title">back to top</a>)</p>
 
 ## Getting Started
 
 ### Prerequisites
 
-* React Native Development Environment
-  
+- React Native Development Environment
+
   Please follow the guide to set up your development environment. https://reactnative.dev/docs/environment-setup?guide=native
-* yarn
+
+- yarn
   ```sh
   npm i -g yarn
   ```
@@ -90,20 +91,21 @@
    yarn start
    ```
 1. Start application
-     1. Android
-        ```sh
-        yarn android
-        ```
-     1. iOS
-        ```sh
-        yarn ios
-        ```
+   1. Android
+      ```sh
+      yarn android
+      ```
+   1. iOS
+      ```sh
+      yarn ios
+      ```
 
 <p align="right">(<a href="#title">back to top</a>)</p>
 
 ## License
 
 Distributed under the MIT License. See [`LICENSE`](https://github.com/chsdwn/FreeToGameApp/blob/main/LICENSE) for more information.
+
 <p align="right">(<a href="#title">back to top</a>)</p>
 
 ## Contact
@@ -116,6 +118,6 @@ Project Link: https://github.com/chsdwn/FreeToGameApp
 
 ## Acknowledgments
 
-* [FreeToGame API Docs](https://www.freetogame.com/api-doc)
+- [FreeToGame API Docs](https://www.freetogame.com/api-doc)
 
 <p align="right">(<a href="#title">back to top</a>)</p>

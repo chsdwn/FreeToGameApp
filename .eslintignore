@@ -1,0 +1,8 @@
+.bundle
+.expo
+.storybook
+android
+coverage
+ios
+node_modules
+vendor
