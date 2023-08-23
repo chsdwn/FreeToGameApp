@@ -25,7 +25,10 @@ export const GameCardSkeleton = () => {
         backgroundColor={theme.colors.onSurfaceDisabled}
       >
         <View
-          style={useStyle(() => ({ height: scaleByWidth(60) }), [scaleByWidth])}
+          style={useStyle(
+            () => ({ height: scaleByWidth(180) }),
+            [scaleByWidth],
+          )}
         />
       </SkeletonPlaceholder>
       <SkeletonPlaceholder
@@ -35,34 +38,34 @@ export const GameCardSkeleton = () => {
         <SkeletonPlaceholder.Item alignItems="center">
           <SkeletonPlaceholder.Item
             width="50%"
-            height={scaleByWidth(7)}
-            marginTop={scaleByWidth(4)}
+            height={scaleByWidth(24)}
+            marginTop={scaleByWidth(14)}
           />
           <SkeletonPlaceholder.Item
             flexDirection="row"
             justifyContent="space-around"
             alignItems="center"
             width="100%"
-            marginTop={scaleByWidth(4)}
-            paddingBottom={scaleByWidth(4)}
+            marginTop={scaleByWidth(14)}
+            paddingBottom={scaleByWidth(14)}
           >
             <SkeletonPlaceholder.Item flexDirection="row" width="30%">
               <SkeletonPlaceholder.Item
-                width={scaleByWidth(5.5)}
-                height={scaleByWidth(5.5)}
+                width={scaleByWidth(18)}
+                height={scaleByWidth(18)}
                 borderRadius={30}
                 marginRight={4}
               />
-              <SkeletonPlaceholder.Item width="70%" height={scaleByWidth(5)} />
+              <SkeletonPlaceholder.Item width="70%" height={scaleByWidth(18)} />
             </SkeletonPlaceholder.Item>
             <SkeletonPlaceholder.Item flexDirection="row" width="30%">
               <SkeletonPlaceholder.Item
-                width={scaleByWidth(5.5)}
-                height={scaleByWidth(5.5)}
+                width={scaleByWidth(18)}
+                height={scaleByWidth(18)}
                 borderRadius={30}
                 marginRight={4}
               />
-              <SkeletonPlaceholder.Item width="70%" height={scaleByWidth(5)} />
+              <SkeletonPlaceholder.Item width="70%" height={scaleByWidth(18)} />
             </SkeletonPlaceholder.Item>
           </SkeletonPlaceholder.Item>
         </SkeletonPlaceholder.Item>

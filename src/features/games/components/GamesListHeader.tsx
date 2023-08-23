@@ -9,7 +9,7 @@ import { useGamesFilterStore } from '../store';
 
 export const GamesListHeader = () => {
   const theme = useTheme();
-  const { scaleByHeight } = useScale();
+  const { scaleByWidth } = useScale();
   const navigation = useNavigation<HomeStackNavigationProp>();
   const { platform, category, sortBy } = useGamesFilterStore();
 
@@ -37,12 +37,12 @@ export const GamesListHeader = () => {
       <View style={styles.filterButtonContainer}>
         <IconButton
           icon="filter-outline"
-          size={scaleByHeight(8)}
+          size={scaleByWidth(20)}
           onPress={handleFilterPress}
         />
         <Badge
           visible={!!badgeCount}
-          size={scaleByHeight(4.5)}
+          size={scaleByWidth(10)}
           style={styles.badge}
         >
           {badgeCount}

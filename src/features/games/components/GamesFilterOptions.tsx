@@ -33,7 +33,7 @@ export const GamesFilterOptions = <T,>({
       >
         <Icon
           name={icon}
-          size={scaleByWidth(6.5)}
+          size={scaleByWidth(16)}
           color={theme.colors.tertiary}
           style={useStyle(
             () => ({ marginRight: theme.spacing[1] }),
@@ -64,7 +64,7 @@ export const GamesFilterOptions = <T,>({
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
-    alignContent: 'center',
+    alignItems: 'center',
   },
   filterBtnContainer: {
     flexDirection: 'row',

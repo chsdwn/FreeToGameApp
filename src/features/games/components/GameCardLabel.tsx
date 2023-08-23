@@ -22,7 +22,7 @@ export const GameCardLabel = ({ label, icon }: IProps) => {
     >
       <Icon
         name={icon}
-        size={scaleByWidth(6.5)}
+        size={scaleByWidth(16)}
         color={theme.colors.tertiary}
         style={useStyle(
           () => ({ marginRight: theme.spacing[2] }),
