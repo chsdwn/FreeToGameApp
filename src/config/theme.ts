@@ -1,8 +1,5 @@
 import { MD3Theme, MD3TypescaleKey } from 'react-native-paper';
-import {
-  MD3Colors,
-  MD3Type,
-} from 'react-native-paper/lib/typescript/src/types';
+import { MD3Colors, MD3Type } from 'react-native-paper/lib/typescript/types';
 
 export interface Theme extends MD3Theme {
   spacing: Record<number, number>;
@@ -128,16 +125,16 @@ export const fontsConfig: Partial<Record<MD3TypescaleKey, Partial<MD3Type>>> = {
 export const roundness = 3;
 export const spacing = {
   0: 0,
-  1: 1,
-  2: 3,
-  3: 4,
-  4: 5,
-  5: 8,
-  6: 10,
-  7: 16,
-  8: 21,
-  9: 32,
-  10: 42,
+  1: 4,
+  2: 8,
+  3: 12,
+  4: 16,
+  5: 24,
+  6: 32,
+  7: 48,
+  8: 64,
+  9: 96,
+  10: 128,
 };
 
 export const darkColors: MD3Colors = {
