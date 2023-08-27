@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Surface } from 'react-native-paper';
+import { useScale, useStyle } from 'react-native-responsive-scalability';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 
-import { useScale, useStyle, useTheme } from '@/hooks';
+import { useTheme } from '@/hooks';
 
 export const GameCardSkeleton = () => {
   const theme = useTheme();
@@ -15,9 +16,12 @@ export const GameCardSkeleton = () => {
       style={useStyle(
         () => [
           styles.container,
-          { backgroundColor: theme.colors.surface, margin: theme.spacing[2] },
+          {
+            backgroundColor: theme.colors.surface,
+            margin: scaleByWidth(theme.spacing[2]),
+          },
         ],
-        [theme.colors.surface, theme.spacing],
+        [theme.colors.surface, theme.spacing, scaleByWidth],
       )}
     >
       <SkeletonPlaceholder

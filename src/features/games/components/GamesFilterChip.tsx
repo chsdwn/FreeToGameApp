@@ -1,8 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
+import { useScale, useStyle } from 'react-native-responsive-scalability';
 
 import { Chip } from '@/components';
-import { useStyle, useTheme } from '@/hooks';
+import { useTheme } from '@/hooks';
 
 type IProps = {
   label: string;
@@ -11,15 +12,16 @@ type IProps = {
 };
 export const GamesFilterChip = ({ label, active = false, onPress }: IProps) => {
   const theme = useTheme();
+  const { scaleByWidth } = useScale();
 
   return (
     <View
       style={useStyle(
         () => ({
-          marginBottom: theme.spacing[2],
-          marginRight: theme.spacing[2],
+          marginBottom: scaleByWidth(theme.spacing[2]),
+          marginRight: scaleByWidth(theme.spacing[2]),
         }),
-        [theme.spacing],
+        [theme.spacing, scaleByWidth],
       )}
     >
       <Chip active={active} label={label} onPress={onPress} />

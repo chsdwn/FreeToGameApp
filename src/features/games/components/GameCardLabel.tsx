@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
+import { useScale, useStyle } from 'react-native-responsive-scalability';
 
-import { Icon } from '@/components';
-import { useScale, useStyle, useTheme } from '@/hooks';
+import { Icon, Text } from '@/components';
+import { useTheme } from '@/hooks';
 
 type IProps = {
   label: string;
@@ -16,8 +16,8 @@ export const GameCardLabel = ({ label, icon }: IProps) => {
   return (
     <View
       style={useStyle(
-        () => [styles.container, { marginTop: theme.spacing[1] }],
-        [theme.spacing],
+        () => [styles.container, { marginTop: scaleByWidth(theme.spacing[1]) }],
+        [theme.spacing, scaleByWidth],
       )}
     >
       <Icon
@@ -25,11 +25,11 @@ export const GameCardLabel = ({ label, icon }: IProps) => {
         size={scaleByWidth(16)}
         color={theme.colors.tertiary}
         style={useStyle(
-          () => ({ marginRight: theme.spacing[2] }),
-          [theme.spacing],
+          () => ({ marginRight: scaleByWidth(theme.spacing[2]) }),
+          [theme.spacing, scaleByWidth],
         )}
       />
-      <Text variant="labelLarge" numberOfLines={1}>
+      <Text variant="bodyMedium" numberOfLines={1}>
         {label}
       </Text>
     </View>

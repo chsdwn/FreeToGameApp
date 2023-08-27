@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
+import { useScale } from 'react-native-responsive-scalability';
 
-import { Icon } from '@/components';
-import { useScale, useTheme } from '@/hooks';
+import { Icon, Text } from '@/components';
+import { useTheme } from '@/hooks';
 
 export const GamesListEmpty = () => {
   const theme = useTheme();
@@ -13,10 +13,10 @@ export const GamesListEmpty = () => {
     <View style={styles.container}>
       <Icon
         name="controller-classic-outline"
-        size={scaleByWidth(32)}
+        size={scaleByWidth(128)}
         color={theme.colors.tertiary}
       />
-      <Text variant="bodyLarge">No games found</Text>
+      <Text variant="displayMedium">No games found</Text>
     </View>
   );
 };

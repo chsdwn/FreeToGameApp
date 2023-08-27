@@ -1,9 +1,13 @@
-import React, { useContext, useMemo } from 'react';
-import { useWindowDimensions } from 'react-native';
+import React, { useMemo } from 'react';
 import { FlashList } from '@shopify/flash-list';
+import { useSafeAreaFrame } from 'react-native-safe-area-context';
+import {
+  useResponsiveScalability,
+  useScale,
+  useStyle,
+} from 'react-native-responsive-scalability';
 
-import { useDebounce, useStyle, useTheme } from '@/hooks';
-import { ResponsiveContext } from '@/store';
+import { useDebounce, useTheme } from '@/hooks';
 import { GameCard } from './GameCard';
 import { GameCardSkeleton } from './GameCardSkeleton';
 import { GamesListEmpty } from './GamesListEmpty';
@@ -19,8 +23,9 @@ const generateSkeletonDataArrayOfSize = (size: number) => {
 
 export const GamesList = () => {
   const theme = useTheme();
-  const { width } = useWindowDimensions();
-  const { breakpoints } = useContext(ResponsiveContext);
+  const { width } = useSafeAreaFrame();
+  const { breakpoints } = useResponsiveScalability();
+  const { scaleByWidth } = useScale();
   const { platform, category, sortBy } = useGamesFilterStore();
   const gamesQuery = useGames({ platform, category, sortBy });
 
@@ -28,8 +33,8 @@ export const GamesList = () => {
   const debouncedIsLoading = useDebounce(gamesQuery.isLoading, 500);
 
   const listContentStyle = useStyle(
-    () => ({ padding: theme.spacing[2] }),
-    [theme.spacing],
+    () => ({ padding: scaleByWidth(theme.spacing[2]) }),
+    [theme.spacing, scaleByWidth],
   );
 
   const handleRefresh = () => {
@@ -37,8 +42,8 @@ export const GamesList = () => {
   };
 
   let numColumns = 1;
-  if (breakpoints?.sm && width >= breakpoints.sm) numColumns = 2;
-  if (breakpoints?.md && width >= breakpoints.md) numColumns = 3;
+  if (breakpoints.sm && width >= breakpoints.sm) numColumns = 2;
+  if (breakpoints.md && width >= breakpoints.md) numColumns = 3;
   if (breakpoints?.lg && width >= breakpoints.lg) numColumns = 4;
 
   const skeletonData = useMemo(
@@ -49,6 +54,7 @@ export const GamesList = () => {
   if (gamesQuery.isLoading || debouncedIsLoading) {
     return (
       <FlashList
+        key={`games-list-skeleton-column-${numColumns}`}
         data={skeletonData}
         keyExtractor={(item) => `game-skeleton-${item.id}`}
         renderItem={({ item: { Skeleton } }) => <Skeleton />}
@@ -61,6 +67,7 @@ export const GamesList = () => {
 
   return (
     <FlashList
+      key={`games-list-column-${numColumns}`}
       data={gamesQuery.data}
       keyExtractor={(item) => `game-${item.id}`}
       renderItem={({ item }) => <GameCard game={item} />}

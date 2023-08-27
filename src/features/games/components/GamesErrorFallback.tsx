@@ -1,11 +1,12 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { isAxiosError } from 'axios';
-import { Button, Surface, Text } from 'react-native-paper';
+import { Button, Surface } from 'react-native-paper';
+import { useScale, useStyle } from 'react-native-responsive-scalability';
 import { FallbackComponentProps } from 'react-native-error-boundary';
 
-import { Icon } from '@/components';
-import { useScale, useStyle, useTheme } from '@/hooks';
+import { Icon, Text } from '@/components';
+import { useTheme } from '@/hooks';
 
 export const GamesErrorFallback = ({
   error,
@@ -32,24 +33,24 @@ export const GamesErrorFallback = ({
       <Surface
         mode="flat"
         style={useStyle(
-          () => [styles.container, { margin: theme.spacing[3] }],
-          [theme.spacing],
+          () => [styles.container, { margin: scaleByWidth(theme.spacing[3]) }],
+          [theme.spacing, scaleByWidth],
         )}
       >
         <Icon
           name="alert-circle-outline"
-          size={scaleByWidth(36)}
+          size={scaleByWidth(128)}
           color={theme.colors.error}
         />
-        <Text variant="bodyLarge" style={styles.message}>
+        <Text variant="displayMedium" style={styles.message}>
           {errorMessage}
         </Text>
         <Button
           onPress={resetError}
           mode="outlined"
           style={useStyle(
-            () => ({ marginTop: theme.spacing[4] }),
-            [theme.spacing],
+            () => ({ marginTop: scaleByWidth(theme.spacing[4]) }),
+            [theme.spacing, scaleByWidth],
           )}
         >
           Try Again

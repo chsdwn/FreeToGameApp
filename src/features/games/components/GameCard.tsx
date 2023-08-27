@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Card, Text } from 'react-native-paper';
+import { Card } from 'react-native-paper';
 import { Image } from 'expo-image';
+import { useScale, useStyle } from 'react-native-responsive-scalability';
 
+import { Text } from '@/components';
 import { roundness } from '@/config/theme';
-import { useStyle, useTheme } from '@/hooks';
+import { useTheme } from '@/hooks';
 import { IGame } from '../types';
 import { GameCardLabel } from './GameCardLabel';
 
@@ -15,6 +17,7 @@ type IProps = {
 };
 export const GameCard = React.memo(({ game }: IProps) => {
   const theme = useTheme();
+  const { scaleByWidth } = useScale();
 
   return (
     <Card
@@ -24,10 +27,10 @@ export const GameCard = React.memo(({ game }: IProps) => {
           styles.card,
           {
             backgroundColor: theme.colors.surface,
-            margin: theme.spacing[2],
+            margin: scaleByWidth(theme.spacing[2]),
           },
         ],
-        [theme.colors.surface, theme.spacing],
+        [theme.colors.surface, theme.spacing, scaleByWidth],
       )}
     >
       <Image
@@ -40,15 +43,18 @@ export const GameCard = React.memo(({ game }: IProps) => {
       />
       <View
         style={useStyle(
-          () => ({ marginHorizontal: theme.spacing[2] }),
-          [theme.spacing],
+          () => ({ marginHorizontal: scaleByWidth(theme.spacing[2]) }),
+          [theme.spacing, scaleByWidth],
         )}
       >
         <Text
-          variant="titleLarge"
+          variant="headlineSmall"
           style={useStyle(
-            () => [styles.title, { paddingVertical: theme.spacing[2] }],
-            [theme.spacing],
+            () => [
+              styles.title,
+              { paddingVertical: scaleByWidth(theme.spacing[2]) },
+            ],
+            [theme.spacing, scaleByWidth],
           )}
         >
           {game.title}
@@ -58,11 +64,11 @@ export const GameCard = React.memo(({ game }: IProps) => {
             () => [
               styles.platformGenreContainer,
               {
-                marginBottom: theme.spacing[3],
-                marginHorizontal: theme.spacing[4],
+                marginBottom: scaleByWidth(theme.spacing[3]),
+                marginHorizontal: scaleByWidth(theme.spacing[4]),
               },
             ],
-            [theme.spacing],
+            [theme.spacing, scaleByWidth],
           )}
         >
           <GameCardLabel label={game.platform} icon="layers-triple" />
