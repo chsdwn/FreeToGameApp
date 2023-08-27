@@ -10,17 +10,17 @@ module.exports = {
             group: ['react-native-vector-icons'],
             message: 'Import Icon from @/components',
           },
+          {
+            group: ['react-native', 'react-native-paper'],
+            importNames: ['Text'],
+            message: 'Import Text from @components',
+          },
         ],
         paths: [
           {
             name: 'react-native',
             importNames: ['StatusBar'],
             message: 'Import StatusBar from @/components',
-          },
-          {
-            name: 'react-native',
-            importNames: ['Text'],
-            message: 'Import Text from react-native-paper',
           },
           {
             name: 'axios',

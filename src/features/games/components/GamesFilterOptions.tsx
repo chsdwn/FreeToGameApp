@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
+import { useScale, useStyle } from 'react-native-responsive-scalability';
 
-import { Icon } from '@/components';
-import { useScale, useStyle, useTheme } from '@/hooks';
+import { Icon, Text } from '@/components';
+import { useTheme } from '@/hooks';
 import { GamesFilterChip } from './GamesFilterChip';
 
 type IProps<T> = {
@@ -27,8 +27,11 @@ export const GamesFilterOptions = <T,>({
     <>
       <View
         style={useStyle(
-          () => [styles.titleContainer, { marginTop: theme.spacing[3] }],
-          [theme.spacing],
+          () => [
+            styles.titleContainer,
+            { marginTop: scaleByWidth(theme.spacing[3]) },
+          ],
+          [theme.spacing, scaleByWidth],
         )}
       >
         <Icon
@@ -36,16 +39,19 @@ export const GamesFilterOptions = <T,>({
           size={scaleByWidth(16)}
           color={theme.colors.tertiary}
           style={useStyle(
-            () => ({ marginRight: theme.spacing[1] }),
-            [theme.spacing],
+            () => ({ marginRight: scaleByWidth(theme.spacing[1]) }),
+            [theme.spacing, scaleByWidth],
           )}
         />
-        <Text variant="labelLarge">{title}</Text>
+        <Text variant="bodyMedium">{title}</Text>
       </View>
       <View
         style={useStyle(
-          () => [styles.filterBtnContainer, { marginTop: theme.spacing[2] }],
-          [theme.spacing],
+          () => [
+            styles.filterBtnContainer,
+            { marginTop: scaleByWidth(theme.spacing[2]) },
+          ],
+          [theme.spacing, scaleByWidth],
         )}
       >
         {optionItems.map(({ label, value }) => (

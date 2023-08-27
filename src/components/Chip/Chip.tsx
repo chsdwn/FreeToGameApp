@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Chip as PaperChip, Text } from 'react-native-paper';
+import { Chip as PaperChip } from 'react-native-paper';
+import { useStyle } from 'react-native-responsive-scalability';
 
-import { useStyle, useTheme } from '@/hooks';
+import { useTheme } from '@/hooks';
+import { Text } from '../Text';
 
 export type ChipProps = {
   label: string;
@@ -21,7 +23,7 @@ export const Chip = ({ label, active = false, onPress }: ChipProps) => {
         [theme.colors.tertiary],
       )}
     >
-      <Text variant="labelMedium">{label}</Text>
+      <Text variant="labelLarge">{label}</Text>
     </PaperChip>
   );
 };

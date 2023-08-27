@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { Button, Surface } from 'react-native-paper';
+import { useScale, useStyle } from 'react-native-responsive-scalability';
 
-import { useStyle, useTheme } from '@/hooks';
+import { useTheme } from '@/hooks';
 import { GamesFilterOptions } from '../components';
 import { categoryItems, platformItems, sortByItems } from '../config';
 import { useGamesFilterStore } from '../store';
@@ -11,6 +12,7 @@ import { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
 
 export const GamesFilterScreen = () => {
   const theme = useTheme();
+  const { scaleByWidth } = useScale();
   const navigation = useNavigation();
   const gamesFilterStore = useGamesFilterStore();
 
@@ -52,8 +54,8 @@ export const GamesFilterScreen = () => {
     <Surface style={styles.root}>
       <SafeAreaView
         style={useStyle(
-          () => [styles.container, { margin: theme.spacing[3] }],
-          [theme.spacing],
+          () => [styles.container, { margin: scaleByWidth(theme.spacing[3]) }],
+          [theme.spacing, scaleByWidth],
         )}
       >
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -84,9 +86,9 @@ export const GamesFilterScreen = () => {
           style={useStyle(
             () => [
               styles.actionButtonsContainer,
-              { marginTop: theme.spacing[3] },
+              { marginTop: scaleByWidth(theme.spacing[3]) },
             ],
-            [theme.spacing],
+            [theme.spacing, scaleByWidth],
           )}
         >
           <Button
@@ -100,8 +102,8 @@ export const GamesFilterScreen = () => {
           </Button>
           <View
             style={useStyle(
-              () => ({ width: theme.spacing[4] }),
-              [theme.spacing],
+              () => ({ width: scaleByWidth(theme.spacing[4]) }),
+              [theme.spacing, scaleByWidth],
             )}
           />
           <Button
