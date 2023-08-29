@@ -38,20 +38,21 @@
 
 ### Tech Stack
 
-| Library                   | Category         | Version | Description                                                                      |
-| ------------------------- | ---------------- | ------- | -------------------------------------------------------------------------------- |
-| React Native              | Mobile Framework | v0.72   | The best cross-platform mobile framework                                         |
-| React                     | UI Framework     | v18     | The most popular UI framework in the world                                       |
-| TypeScript                | Language         | v4      | Static typechecking                                                              |
-| React Navigation          | Navigation       | v6      | Performant and consistent navigation framework                                   |
-| React Native Paper        | UI               | v5      | Material Design for React Native                                                 |
-| React Native Vector Icons | UI               | v9      | Customizable icons                                                               |
-| Zustand                   | State Management | v4      | A small, fast and scalable bearbones state-management solution                   |
-| TanStack Query            | State Management | v4      | Powerful asynchronous state management, server-state utilities and data fetching |
-| axios                     | REST client      | v1      | Communicate with back-end                                                        |
-| Flipper                   | Debugger         |         | Native debugging                                                                 |
-| Hermes                    | JS engine        |         | Fine-tuned JS engine for RN                                                      |
-| Jest                      | Test Runner      | v29     | Standard test runner for JS apps                                                 |
+| Library                             | Category         | Version | Description                                                                      |
+| ----------------------------------- | ---------------- | ------- | -------------------------------------------------------------------------------- |
+| React Native                        | Mobile Framework | v0.72   | The best cross-platform mobile framework                                         |
+| React                               | UI Framework     | v18     | The most popular UI framework in the world                                       |
+| TypeScript                          | Language         | v4      | Static typechecking                                                              |
+| React Navigation                    | Navigation       | v6      | Performant and consistent navigation framework                                   |
+| React Native Paper                  | UI               | v5      | Material Design for React Native                                                 |
+| React Native Responsive Scalability | UI               | v1      | Utility hooks for scalability                                                    |
+| React Native Vector Icons           | UI               | v9      | Customizable icons                                                               |
+| Zustand                             | State Management | v4      | A small, fast and scalable bearbones state-management solution                   |
+| TanStack Query                      | State Management | v4      | Powerful asynchronous state management, server-state utilities and data fetching |
+| axios                               | REST client      | v1      | Communicate with back-end                                                        |
+| Flipper                             | Debugger         |         | Native debugging                                                                 |
+| Hermes                              | JS engine        |         | Fine-tuned JS engine for RN                                                      |
+| Jest                                | Test Runner      | v29     | Standard test runner for JS apps                                                 |
 
 <p align="right">(<a href="#title">back to top</a>)</p>
 
