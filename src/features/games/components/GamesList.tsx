@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { FlashList } from '@shopify/flash-list';
-import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import {
   useResponsiveScalability,
+  useSafeAreaWindow,
   useScale,
   useStyle,
 } from 'react-native-responsive-scalability';
@@ -23,7 +23,7 @@ const generateSkeletonDataArrayOfSize = (size: number) => {
 
 export const GamesList = () => {
   const theme = useTheme();
-  const { width } = useSafeAreaFrame();
+  const { width } = useSafeAreaWindow();
   const { breakpoints } = useResponsiveScalability();
   const { scaleByWidth } = useScale();
   const { platform, category, sortBy } = useGamesFilterStore();
