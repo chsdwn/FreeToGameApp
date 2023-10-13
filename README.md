@@ -40,7 +40,7 @@
 
 ### Demo
 
-<video width="400" src="./screenshots/demo.mp4"></video>
+https://github.com/chsdwn/FreeToGameApp/assets/13810855/2f7af9e8-e4d0-4d3e-adb3-52977cb0db3a
 
 ### Screenshots
 
