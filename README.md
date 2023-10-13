@@ -36,6 +36,26 @@
 
 ## About The Project
 
+<p align="center">A mobile application that provides a list of free-to-play games.</p>
+
+### Demo
+
+<video width="400" src="./screenshots/demo.mp4"></video>
+
+### Screenshots
+
+#### List of Games
+
+![List of free games](./screenshots/home.jpeg 'List of free games')
+
+#### Filter
+
+![List of free games](./screenshots/filter.jpg 'List of free games')
+
+#### Loading
+
+![Loading skeleton](./screenshots/skeleton.jpg 'Loading skeleton')
+
 ### Tech Stack
 
 | Library                             | Category         | Version | Description                                                                      |
