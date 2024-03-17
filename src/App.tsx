@@ -1,7 +1,7 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { QueryClientProvider } from '@tanstack/react-query';
+import React from 'react';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 import {
   ResponsiveScalabilityProvider,

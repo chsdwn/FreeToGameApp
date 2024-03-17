@@ -1,9 +1,9 @@
+import { isAxiosError } from 'axios';
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { isAxiosError } from 'axios';
+import { FallbackComponentProps } from 'react-native-error-boundary';
 import { Button, Surface } from 'react-native-paper';
 import { useScale, useStyle } from 'react-native-responsive-scalability';
-import { FallbackComponentProps } from 'react-native-error-boundary';
 
 import { Icon, Text } from '@/components';
 import { useTheme } from '@/hooks';

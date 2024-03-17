@@ -1,14 +1,15 @@
+import { useNavigation } from '@react-navigation/core';
 import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
-import { useNavigation } from '@react-navigation/core';
 import { Button, Surface } from 'react-native-paper';
 import { useScale, useStyle } from 'react-native-responsive-scalability';
 
-import { useTheme } from '@/hooks';
 import { GamesFilterOptions } from '../components';
 import { categoryItems, platformItems, sortByItems } from '../config';
 import { useGamesFilterStore } from '../store';
 import { IGameCategory, IGamePlatform, IGameSortBy } from '../types';
+
+import { useTheme } from '@/hooks';
 
 export const GamesFilterScreen = () => {
   const theme = useTheme();

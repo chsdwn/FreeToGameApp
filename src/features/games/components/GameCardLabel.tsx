@@ -3,11 +3,12 @@ import { StyleSheet, View } from 'react-native';
 import { useScale, useStyle } from 'react-native-responsive-scalability';
 
 import { Icon, Text } from '@/components';
+import { IconName } from '@/components/Icon';
 import { useTheme } from '@/hooks';
 
 type IProps = {
   label: string;
-  icon: string;
+  icon: IconName;
 };
 export const GameCardLabel = ({ label, icon }: IProps) => {
   const theme = useTheme();

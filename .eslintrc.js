@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: '@react-native',
+  extends: ['universe/native'],
   rules: {
     'no-restricted-imports': [
       'error',

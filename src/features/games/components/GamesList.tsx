@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
 import { FlashList } from '@shopify/flash-list';
+import React, { useMemo } from 'react';
 import {
   useResponsiveScalability,
   useSafeAreaWindow,
@@ -7,12 +7,13 @@ import {
   useStyle,
 } from 'react-native-responsive-scalability';
 
-import { useDebounce, useTheme } from '@/hooks';
 import { GameCard } from './GameCard';
 import { GameCardSkeleton } from './GameCardSkeleton';
 import { GamesListEmpty } from './GamesListEmpty';
 import { useGames } from '../api';
 import { useGamesFilterStore } from '../store';
+
+import { useDebounce, useTheme } from '@/hooks';
 
 const generateSkeletonDataArrayOfSize = (size: number) => {
   return Array.from(Array(size).keys()).map((id) => ({

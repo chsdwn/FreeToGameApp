@@ -6,8 +6,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useStyle } from 'react-native-responsive-scalability';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useTheme } from '@/hooks';
 
