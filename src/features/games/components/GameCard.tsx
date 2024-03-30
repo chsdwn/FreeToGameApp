@@ -1,14 +1,15 @@
+import { Image } from 'expo-image';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Card } from 'react-native-paper';
-import { Image } from 'expo-image';
 import { useScale, useStyle } from 'react-native-responsive-scalability';
+
+import { GameCardLabel } from './GameCardLabel';
+import { IGame } from '../types';
 
 import { Text } from '@/components';
 import { roundness } from '@/config/theme';
 import { useTheme } from '@/hooks';
-import { IGame } from '../types';
-import { GameCardLabel } from './GameCardLabel';
 
 const imagePlaceholder = require('../../../../assets/images/placeholder.png');
 

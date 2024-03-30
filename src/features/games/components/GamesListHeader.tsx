@@ -1,13 +1,14 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { useNavigation } from '@react-navigation/core';
 import { Badge, IconButton, Surface } from 'react-native-paper';
 import { useScale, useStyle } from 'react-native-responsive-scalability';
+
+import { useGamesFilterStore } from '../store';
 
 import { Text } from '@/components';
 import { useTheme } from '@/hooks';
 import { HomeStackNavigationProp } from '@/types';
-import { useGamesFilterStore } from '../store';
 
 export const GamesListHeader = () => {
   const theme = useTheme();

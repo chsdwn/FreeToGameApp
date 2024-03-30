@@ -1,10 +1,13 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Surface } from 'react-native-paper';
 import { useScale, useStyle } from 'react-native-responsive-scalability';
-import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
+import { createShimmerPlaceholder } from 'react-native-shimmer-placeholder';
 
 import { useTheme } from '@/hooks';
+
+const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
 
 export const GameCardSkeleton = () => {
   const theme = useTheme();
@@ -24,56 +27,18 @@ export const GameCardSkeleton = () => {
         [theme.colors.surface, theme.spacing, scaleByWidth],
       )}
     >
-      <SkeletonPlaceholder
-        borderRadius={4}
-        backgroundColor={theme.colors.onSurfaceDisabled}
-      >
-        <View
-          style={useStyle(
-            () => ({ height: scaleByWidth(180) }),
-            [scaleByWidth],
-          )}
-        />
-      </SkeletonPlaceholder>
-      <SkeletonPlaceholder
-        borderRadius={4}
-        backgroundColor={theme.colors.onSurfaceDisabled}
-      >
-        <SkeletonPlaceholder.Item alignItems="center">
-          <SkeletonPlaceholder.Item
-            width="50%"
-            height={scaleByWidth(24)}
-            marginTop={scaleByWidth(14)}
-          />
-          <SkeletonPlaceholder.Item
-            flexDirection="row"
-            justifyContent="space-around"
-            alignItems="center"
-            width="100%"
-            marginTop={scaleByWidth(14)}
-            paddingBottom={scaleByWidth(14)}
-          >
-            <SkeletonPlaceholder.Item flexDirection="row" width="30%">
-              <SkeletonPlaceholder.Item
-                width={scaleByWidth(18)}
-                height={scaleByWidth(18)}
-                borderRadius={30}
-                marginRight={4}
-              />
-              <SkeletonPlaceholder.Item width="70%" height={scaleByWidth(18)} />
-            </SkeletonPlaceholder.Item>
-            <SkeletonPlaceholder.Item flexDirection="row" width="30%">
-              <SkeletonPlaceholder.Item
-                width={scaleByWidth(18)}
-                height={scaleByWidth(18)}
-                borderRadius={30}
-                marginRight={4}
-              />
-              <SkeletonPlaceholder.Item width="70%" height={scaleByWidth(18)} />
-            </SkeletonPlaceholder.Item>
-          </SkeletonPlaceholder.Item>
-        </SkeletonPlaceholder.Item>
-      </SkeletonPlaceholder>
+      <ShimmerPlaceholder
+        style={[
+          styles.image,
+          { backgroundColor: theme.colors.onSurfaceDisabled },
+        ]}
+        height={200}
+      />
+      <ShimmerPlaceholder height={16} style={styles.title} />
+      <View style={styles.section}>
+        <ShimmerPlaceholder height={14} style={styles.subtitle} />
+        <ShimmerPlaceholder height={14} style={styles.subtitle} />
+      </View>
     </Surface>
   );
 };
@@ -82,5 +47,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderRadius: 8,
+    alignItems: 'center',
+    paddingBottom: 16,
+  },
+  image: {
+    borderRadius: 4,
+    width: '100%',
+  },
+  title: {
+    marginTop: 16,
+    width: '30%',
+  },
+  section: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 24,
+    gap: 24,
+  },
+  subtitle: {
+    width: '35%',
   },
 });

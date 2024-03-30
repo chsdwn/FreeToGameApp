@@ -3,7 +3,7 @@ import { DefaultOptions } from '@tanstack/react-query';
 
 const defaultOptions: DefaultOptions = {
   queries: {
-    useErrorBoundary: true,
+    throwOnError: true,
     retry: false,
     staleTime: 30 * 60 * 1000, // 30min
   },

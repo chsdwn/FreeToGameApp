@@ -3,8 +3,9 @@ import { StyleSheet } from 'react-native';
 import { Chip as PaperChip } from 'react-native-paper';
 import { useStyle } from 'react-native-responsive-scalability';
 
-import { useTheme } from '@/hooks';
 import { Text } from '../Text';
+
+import { useTheme } from '@/hooks';
 
 export type ChipProps = {
   label: string;

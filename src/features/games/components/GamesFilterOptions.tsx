@@ -2,13 +2,15 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useScale, useStyle } from 'react-native-responsive-scalability';
 
-import { Icon, Text } from '@/components';
-import { useTheme } from '@/hooks';
 import { GamesFilterChip } from './GamesFilterChip';
+
+import { Icon, Text } from '@/components';
+import { IconName } from '@/components/Icon';
+import { useTheme } from '@/hooks';
 
 type IProps<T> = {
   title: string;
-  icon: string;
+  icon: IconName;
   activeOption: T | null;
   optionItems: { label: string; value: T }[];
   onOptionChange: (option: T) => void;

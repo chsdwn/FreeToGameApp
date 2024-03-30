@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { axios } from '@/lib';
 import { IGame } from '../types';
+
+import { axios } from '@/lib';
 
 type IFilter = {
   platform: string | null;
@@ -19,4 +20,4 @@ const getGames = ({ platform, category, sortBy }: IFilter) => {
 };
 
 export const useGames = (filter: IFilter) =>
-  useQuery(['game', filter], () => getGames(filter));
+  useQuery({ queryKey: ['game', filter], queryFn: () => getGames(filter) });

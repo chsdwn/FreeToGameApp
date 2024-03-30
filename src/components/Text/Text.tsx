@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
+import { TextStyle } from 'react-native';
 // eslint-disable-next-line no-restricted-imports
 import { Text as PaperText, TextProps } from 'react-native-paper';
 import { useScale, useStyle } from 'react-native-responsive-scalability';
 
 import { fontsConfig } from '@/config/theme';
 import { useTheme } from '@/hooks';
-import { TextStyle } from 'react-native';
 
 export const Text = <T,>({ variant, style, ...props }: TextProps<T>) => {
   const theme = useTheme();
