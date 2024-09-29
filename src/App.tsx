@@ -1,4 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
+import { wrap } from '@sentry/react-native';
 import { QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
@@ -10,8 +11,10 @@ import {
 
 import { StatusBar } from './components';
 import { useTheme } from './hooks';
-import { queryClient } from './lib';
+import { initializeSentry, queryClient } from './lib';
 import { HomeRoute } from './routes';
+
+initializeSentry();
 
 const config: IResponsiveScalabilityConfig = {
   breakpoints: {
@@ -19,7 +22,7 @@ const config: IResponsiveScalabilityConfig = {
   },
 };
 
-export const App = () => {
+export const BaseApp = () => {
   const theme = useTheme();
 
   return (
@@ -37,6 +40,8 @@ export const App = () => {
     </NavigationContainer>
   );
 };
+
+export const App = wrap(BaseApp);
 
 const styles = StyleSheet.create({
   root: {
