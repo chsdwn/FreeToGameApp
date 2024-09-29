@@ -73,3 +73,5 @@ web-build/
 # native
 android/
 ios/
+
+.env*.local
