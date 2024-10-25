@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { wrap } from '@sentry/react-native';
 import { QueryClientProvider } from '@tanstack/react-query';
+import Constants from 'expo-constants';
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
@@ -41,7 +42,14 @@ export const BaseApp = () => {
   );
 };
 
-export const App = wrap(BaseApp);
+let App = wrap(BaseApp);
+
+console.log('expoConfig', Constants.expoConfig?.extra);
+if (Constants.expoConfig?.extra?.storybookEnabled === 'true') {
+  App = require('../.storybook').default;
+}
+
+export { App };
 
 const styles = StyleSheet.create({
   root: {
