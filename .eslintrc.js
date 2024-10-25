@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  env: { node: true },
   extends: ['universe/native'],
   rules: {
     'no-restricted-imports': [
