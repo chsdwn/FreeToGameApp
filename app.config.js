@@ -1,3 +1,4 @@
+/** @type {import("expo/config").ExpoConfig} */
 module.exports = ({ config }) => ({
   ...config,
   plugins: [
@@ -11,4 +12,8 @@ module.exports = ({ config }) => ({
       },
     ],
   ],
+  extra: {
+    ...config.extra,
+    storybookEnabled: process.env.STORYBOOK_ENABLED,
+  },
 });
