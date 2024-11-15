@@ -1,3 +1,3 @@
 export { axios } from './axios';
 export { queryClient } from './react-query';
-export { initializeSentry } from './sentry';
+export { initializeSentry, navigationIntegration } from './sentry';

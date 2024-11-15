@@ -1,27 +1,42 @@
 import {
-  createNativeStackNavigator,
-  NativeStackNavigationOptions,
-} from '@react-navigation/native-stack';
-import React from 'react';
+  NavigationContainerRef,
+  ParamListBase,
+  StaticParamList,
+  createStaticNavigation,
+} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useRef } from 'react';
 
 import { GamesFilterScreen, GamesScreen } from '@/features/games/screens';
-import { HomeStackParamList } from '@/types';
+import { navigationIntegration } from '@/lib';
 
-const screenOptions: NativeStackNavigationOptions = { headerShown: false };
-const gamesFilterScreenOptions: NativeStackNavigationOptions = {
-  presentation: 'modal',
-};
+const RootStack = createNativeStackNavigator({
+  screens: {
+    Games: {
+      screen: GamesScreen,
+    },
+    GamesFilter: {
+      screen: GamesFilterScreen,
+      options: {
+        presentation: 'modal',
+      },
+    },
+  },
+  screenOptions: {
+    headerShown: false,
+  },
+});
 
-const Stack = createNativeStackNavigator<HomeStackParamList>();
+const Navigation = createStaticNavigation(RootStack);
+
+export type RootStackParamList = StaticParamList<typeof RootStack>;
+
 export const HomeRoute = () => {
-  return (
-    <Stack.Navigator screenOptions={screenOptions}>
-      <Stack.Screen name="Games" component={GamesScreen} />
-      <Stack.Screen
-        name="GamesFilter"
-        component={GamesFilterScreen}
-        options={gamesFilterScreenOptions}
-      />
-    </Stack.Navigator>
-  );
+  const ref = useRef<NavigationContainerRef<ParamListBase>>(null);
+
+  const handleReady = () => {
+    navigationIntegration.registerNavigationContainer(ref);
+  };
+
+  return <Navigation ref={ref} onReady={handleReady} />;
 };
