@@ -44,7 +44,6 @@ export const BaseApp = () => {
 
 let App = wrap(BaseApp);
 
-console.log('expoConfig', Constants.expoConfig?.extra);
 if (Constants.expoConfig?.extra?.storybookEnabled === 'true') {
   App = require('../.storybook').default;
 }

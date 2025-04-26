@@ -1,4 +1,4 @@
-import { FlashList } from '@shopify/flash-list';
+import { LegendList } from '@legendapp/list';
 import React, { useMemo } from 'react';
 import {
   useResponsiveScalability,
@@ -54,30 +54,31 @@ export const GamesList = () => {
 
   if (gamesQuery.isLoading || debouncedIsLoading) {
     return (
-      <FlashList
+      <LegendList
         key={`games-list-skeleton-column-${numColumns}`}
         data={skeletonData}
         keyExtractor={(item) => `game-skeleton-${item.id}`}
         renderItem={({ item: { Skeleton } }) => <Skeleton />}
         contentContainerStyle={listContentStyle}
         numColumns={numColumns}
-        estimatedItemSize={250}
       />
     );
   }
 
   return (
-    <FlashList
+    <LegendList
       key={`games-list-column-${numColumns}`}
-      data={gamesQuery.data}
+      data={gamesQuery.data ?? []}
       keyExtractor={(item) => `game-${item.id}`}
       renderItem={({ item }) => <GameCard game={item} />}
       contentContainerStyle={listContentStyle}
       ListEmptyComponent={GamesListEmpty}
       refreshing={gamesQuery.isFetching || debouncedIsFetching}
       onRefresh={handleRefresh}
-      estimatedItemSize={325}
       numColumns={numColumns}
+      estimatedItemSize={334}
+      waitForInitialLayout
+      recycleItems
     />
   );
 };
