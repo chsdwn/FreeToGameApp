@@ -30,7 +30,10 @@ const meta = {
 
 You can also add markdown notes.
 
-Please Subscribe.
+Checkout my youtube channel.
+- [youtube.com/@chsdwn](https://www.youtube.com/@chsdwn)
+
+---
 
 - Item
 1. Lorem`,

@@ -1,4 +1,3 @@
-import { NavigationContainer } from '@react-navigation/native';
 import { wrap } from '@sentry/react-native';
 import { QueryClientProvider } from '@tanstack/react-query';
 import Constants from 'expo-constants';
@@ -27,24 +26,21 @@ export const BaseApp = () => {
   const theme = useTheme();
 
   return (
-    <NavigationContainer>
-      <QueryClientProvider client={queryClient}>
-        <ResponsiveScalabilityProvider config={config}>
-          <PaperProvider theme={theme}>
-            <StatusBar />
-            <SafeAreaView style={styles.root}>
-              <HomeRoute />
-            </SafeAreaView>
-          </PaperProvider>
-        </ResponsiveScalabilityProvider>
-      </QueryClientProvider>
-    </NavigationContainer>
+    <QueryClientProvider client={queryClient}>
+      <ResponsiveScalabilityProvider config={config}>
+        <PaperProvider theme={theme}>
+          <StatusBar />
+          <SafeAreaView style={styles.root}>
+            <HomeRoute />
+          </SafeAreaView>
+        </PaperProvider>
+      </ResponsiveScalabilityProvider>
+    </QueryClientProvider>
   );
 };
 
 let App = wrap(BaseApp);
 
-console.log('expoConfig', Constants.expoConfig?.extra);
 if (Constants.expoConfig?.extra?.storybookEnabled === 'true') {
   App = require('../.storybook').default;
 }

@@ -8,12 +8,11 @@ import { useGamesFilterStore } from '../store';
 
 import { Text } from '@/components';
 import { useTheme } from '@/hooks';
-import { HomeStackNavigationProp } from '@/types';
 
 export const GamesListHeader = () => {
   const theme = useTheme();
   const { scaleByWidth } = useScale();
-  const navigation = useNavigation<HomeStackNavigationProp>();
+  const navigation = useNavigation();
   const { platform, category, sortBy } = useGamesFilterStore();
 
   let badgeCount = 0;
